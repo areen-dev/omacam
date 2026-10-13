@@ -1,0 +1,96 @@
+resolving dependencies...
+looking for conflicting packages...
+
+Package (2)              New Version  Net Change  Download Size
+
+extra/dkms               3.4.3-2        0.16 MiB       0.05 MiB
+extra/v4l2loopback-dkms  0.15.4-2       0.11 MiB       0.03 MiB
+
+Total Download Size:   0.08 MiB
+Total Installed Size:  0.27 MiB
+
+:: Proceed with installation? [Y/n] 
+:: Retrieving packages...
+ dkms-3.4.3-2-any downloading...
+ v4l2loopback-dkms-0.15.4-2-any downloading...
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Running pre-transaction hooks...
+(1/1) Waiting for limine-snapper-sync to finish...
+:: Processing package changes...
+installing dkms...
+Optional dependencies for dkms
+    linux-headers: build modules against the Arch kernel
+    linux-lts-headers: build modules against the LTS kernel
+    linux-zen-headers: build modules against the ZEN kernel
+    linux-hardened-headers: build modules against the HARDENED kernel
+installing v4l2loopback-dkms...
+:: Running post-transaction hooks...
+(1/3) Arming ConditionNeedsUpdate...
+(2/3) Install DKMS modules
+==> dkms install --no-depmod v4l2loopback/0.15.4 -k 7.2.5-3-omarchy
+==> depmod 7.2.5-3-omarchy
+(3/3) Updating linux initcpios...
+Building UKI for linux (7.2.3-arch1-3)
+==> Using drop-in configuration file: 'omarchy_hooks.conf'
+==> Using drop-in configuration file: 'omarchy_resume.conf'
+==> Using drop-in configuration file: 'thunderbolt_module.conf'
+==> Starting build: '7.2.3-arch1-3'
+  -> Running build hook: [base]
+  -> Running build hook: [udev]
+  -> Running build hook: [plymouth]
+  -> Running build hook: [keyboard]
+==> WARNING: Possibly missing firmware for module: 'xhci_pci_renesas'
+  -> Running build hook: [autodetect]
+  -> Running build hook: [microcode]
+  -> Running build hook: [modconf]
+  -> Running build hook: [kms]
+  -> Running build hook: [keymap]
+  -> Running build hook: [consolefont]
+  -> Running build hook: [block]
+  -> Running build hook: [encrypt]
+==> WARNING: Possibly missing firmware for module: 'qat_6xxx'
+  -> Running build hook: [filesystems]
+  -> Running build hook: [fsck]
+  -> Running build hook: [btrfs-overlayfs]
+  -> Running build hook: [resume]
+==> Generating module dependencies
+==> Creating zstd-compressed initcpio image
+  -> Early uncompressed CPIO image generation successful
+==> Initcpio image generation successful
+==> Creating unified kernel image: '/tmp/limine-mkinitcpio.wRJqjO/linux.efi'
+==> Unified kernel image generation successful
+[1;32mUpdated:[0m /boot/limine.conf
+Building UKI for linux-omarchy (7.2.5-3-omarchy)
+==> Using drop-in configuration file: 'omarchy_hooks.conf'
+==> Using drop-in configuration file: 'omarchy_resume.conf'
+==> Using drop-in configuration file: 'thunderbolt_module.conf'
+==> Starting build: '7.2.5-3-omarchy'
+  -> Running build hook: [base]
+  -> Running build hook: [udev]
+  -> Running build hook: [plymouth]
+  -> Running build hook: [keyboard]
+==> WARNING: Possibly missing firmware for module: 'xhci_pci_renesas'
+  -> Running build hook: [autodetect]
+  -> Running build hook: [microcode]
+  -> Running build hook: [modconf]
+  -> Running build hook: [kms]
+  -> Running build hook: [keymap]
+  -> Running build hook: [consolefont]
+  -> Running build hook: [block]
+  -> Running build hook: [encrypt]
+==> WARNING: Possibly missing firmware for module: 'qat_6xxx'
+  -> Running build hook: [filesystems]
+  -> Running build hook: [fsck]
+  -> Running build hook: [btrfs-overlayfs]
+  -> Running build hook: [resume]
+==> Generating module dependencies
+==> Creating zstd-compressed initcpio image
+  -> Early uncompressed CPIO image generation successful
+==> Initcpio image generation successful
+==> Creating unified kernel image: '/tmp/limine-mkinitcpio.wRJqjO/linux-omarchy.efi'
+==> Unified kernel image generation successful
+[1;32mUpdated:[0m /boot/limine.conf

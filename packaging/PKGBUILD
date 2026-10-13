@@ -1,3 +1,4 @@
+# Maintainer: Areen <areen.root@gmail.com>
 pkgname=omacam
 pkgver=0.1.2
 pkgrel=1
@@ -23,4 +24,5 @@ check() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 "$pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

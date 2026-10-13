@@ -156,9 +156,9 @@ Items 10, 13 and 16 were fixed and re-verified in a third pass. Logs:
 | Late theme state directory | directory created while the app was open: two palette loads (`theme-late-dir.log`) |
 | Accessibility traversal | synthetic Tab steps 1-6 reach Mirror, shutter, Record, Settings, Photos, Videos; live keys reach the app (`a11y-tab.txt`, `a11y-tab-wide.log`, `tab-steps/`, `a11y-live-keys.log`) |
 
-Items 10, 13 and 16 are closed; item 14 (frame-rate list) remains open and
-needs a product decision. The tab traversal result also unblocks the live
-interaction checks for items 7-9 in a later pass.
+Items 10, 13 and 16 are closed; item 14 (frame-rate list) was closed as
+documented in the second live acceptance pass. The tab traversal result also
+unblocked the live interaction checks for items 7-9.
 
 ## Live acceptance pass (2026-10-13)
 
@@ -175,14 +175,18 @@ interaction checks for items 7-9 in a later pass.
 | Folder open | with the renamed build focused, `p` opened the file manager on the photos folder (`acceptance-3/folder-open.log`, `folder-window.txt`) |
 | Keyboard edit and paste | 16 real Tab presses reach the photos field; typing and Return save, Ctrl+A selects, Ctrl+V pastes the clipboard value (`acceptance-3/paste.log`, `keyboard-edit.log`) |
 | Package recipe | `packaging/PKGBUILD` builds `omacam 0.1.2-1` from the pinned tag archive; binary, desktop entry and icon files and modes verified; unsigned (`acceptance-3/pkg-build.log`, `pkg-info.txt`, `pkg-files.txt`) |
+| Package lifecycle | local install removed; `pacman -U` install, desktop launch (`class=dev.areen.omacam`), upgrade to `0.1.2-2`, `pacman -R`; user config kept; local install restored (`acceptance-4/pkg-*.log`) |
+| namcap audit | PKGBUILD clean; package has no errors after the license file was added; remaining warnings are informational (`acceptance-4/namcap-*.txt`) |
+| Virtual camera capture | self-test on `OmacamTest (/dev/video8)` saves a photo and a video (`acceptance-4/loopback-selftest.log`) |
+| Camera disconnect | USB unbind mid-stream: `state=No camera found`, empty format, clean exit; rebind restores the device (`acceptance-4/usb-unbind.log`) |
+| Camera recovery | unbind then rebind while the app ran: back to Streaming without a restart; the synthetic re-plug shuffled node numbers and the app self-healed on the next run (`acceptance-4/usb-recovery.log`, `user-config-check.log`) |
 
 The recording-control check used the instrumented build with `--tab-check`
-traces; the other GUI checks used the installed v0.1.2 binary. This session is
+traces; the other GUI checks used the installed binary. This session is
 a single 2560x1600 monitor at scale 2, so every GUI run here is a HiDPI run
 (`acceptance-3/display.txt`); multi-monitor placement is not applicable on
-this machine. Still not run: camera-disconnect during streaming (needs a
-physical unplug), and the pacman install/upgrade/removal lifecycle and namcap
-for the package.
+this machine. Privileged steps (package lifecycle, USB unbind/rebind) were
+run via `pkexec`. Still not run: AUR/omarchy-pkgs submission and demo media.
 
 ## Historical
 

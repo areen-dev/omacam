@@ -45,7 +45,9 @@ was closed as documented (no code change possible). Evidence: first pass under
    `refreshDevices()` now retries the camera when the device is unchanged and
    the app is in the error state. A busy-camera run whose holder is released
    recovers to `state=Streaming` without an app restart
-   (`evidence/fix2/rescan-recovery.log`).
+   (`evidence/fix2/rescan-recovery.log`). The same recovery was reproduced
+   after the camera's device nodes disappeared and returned (USB
+   unbind/rebind) in `evidence/acceptance-4/usb-recovery.log`.
 6. **Fixed: `--self-test` wrote the temporary folders into the user settings
    file.** Self-test mode no longer writes the settings file at all: a fresh
    `XDG_CONFIG_HOME` gets no file and an existing config stays byte-identical

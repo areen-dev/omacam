@@ -10,14 +10,16 @@ Status: implemented vertical slice; unit tests, automated camera self-test and
 local install/uninstall reproduced on Omarchy 4.0.4-1 (see
 [verification](VERIFICATION.md)). The app launches through the desktop entry
 with the expected Wayland app_id, and preview frame delivery is checked by the
-automated `--ui-check` mode. The audit defects are fixed and verified on
-2026-10-13 across three fix passes; [known issues](KNOWN-ISSUES.md) lists the
-one remaining low-severity item. The launcher entry and icon render in the
-Omarchy menu, the palette follows a full `omarchy theme set` switch, and a
-package recipe builds; a README screenshot was deliberately omitted for
+automated `--ui-check` mode. All audit items are closed and verified on
+2026-10-13 across three fix passes plus two live acceptance passes;
+[known issues](KNOWN-ISSUES.md) records them with evidence. The launcher
+entry and icon render in the
+Omarchy menu, the palette follows a full `omarchy theme set` switch, and the
+package recipe's pacman install, upgrade and removal lifecycle is verified;
+a README screenshot was deliberately omitted for
 privacy.
-Version 0.1.2 has one open low-severity item; review
-[known issues](KNOWN-ISSUES.md) before you publish or deploy this app.
+Version 0.1.2 is the current release; the audit record is in
+[known issues](KNOWN-ISSUES.md).
 Intended Omarchy target: 4 / Hyprland; this is the intended target, not a tested
 compatibility range.
 Tested Omarchy versions: 4.0.4-1 on Hyprland (Wayland), Qt 6.11.2, GCC 16.2.1.

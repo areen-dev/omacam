@@ -1,0 +1,38 @@
+/home/areen/Work/omarchy-camera/packaging/dev.areen.omacam.desktop: hint: value item "Photography" in key "Categories" in group "Desktop Entry" can be extended with another category among the following categories: Graphics, or Office
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/areen/Work/omarchy-camera/target
+[1/34] Automatic MOC and UIC for target camera-core
+[2/32] Running AUTOMOC file extraction for target camera-core
+[3/31] Automatic MOC and UIC for target dev.areen.omacam
+[4/30] Automatic MOC and UIC for target tst_theme_parser
+[5/28] Automatic MOC and UIC for target tst_catalog
+[6/26] Automatic MOC and UIC for target tst_output_paths
+[7/24] Running AUTOMOC file extraction for target dev.areen.omacam
+[8/10] Automatic MOC and UIC for target tst_settings
+Test project /home/areen/Work/omarchy-camera/target
+    Start 1: tst_catalog
+1/4 Test #1: tst_catalog ......................   Passed    0.00 sec
+    Start 2: tst_settings
+2/4 Test #2: tst_settings .....................   Passed    0.01 sec
+    Start 3: tst_output_paths
+3/4 Test #3: tst_output_paths .................   Passed    0.01 sec
+    Start 4: tst_theme_parser
+4/4 Test #4: tst_theme_parser .................   Passed    0.00 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   0.02 sec
+-- Install configuration: "Release"
+-- Installing: /home/areen/.local/bin/dev.areen.omacam
+-- Set non-toolchain portion of runtime path of "/home/areen/.local/bin/dev.areen.omacam" to "$ORIGIN:$ORIGIN/../lib"
+-- Installing: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+-- Installing: /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+
+Installed dev.areen.omacam
+  binary:  /home/areen/.local/bin/dev.areen.omacam
+  desktop: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+  icon:    /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+Uninstall with: ./install.sh --uninstall

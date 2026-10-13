@@ -1,0 +1,5 @@
+Removed dev.areen.omacam application files.
+Kept user data:
+  settings: ~/.config/dev.areen.omacam/camera.conf
+  photos:   ~/Pictures/Camera (or the configured folder)
+  videos:   ~/Videos/Camera (or the configured folder)

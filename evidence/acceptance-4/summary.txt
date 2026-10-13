@@ -1,0 +1,44 @@
+Privileged acceptance pass (2026-10-13)
+
+Privileged steps used `pkexec` (the password dialog covers each step).
+
+Package recipe and lifecycle:
+- namcap: the PKGBUILD is clean after adding a Maintainer tag; the package
+  reports no errors after installing the license below
+  /usr/share/licenses/omacam/. The five remaining warnings are informational
+  (glibc/libgcc/libstdc++ and hicolor-icon-theme are implicit, and the
+  qt6-wayland "may not be needed" hint is expected because Qt loads its
+  Wayland platform plugin at runtime).
+  Files: namcap-pkgbuild.txt, namcap-package.txt.
+- Lifecycle: the local install was removed, then the package was installed
+  with pacman (0.1.2-1), launched through the system desktop entry
+  (`class=dev.areen.omacam`, `title=Omacam`), upgraded to 0.1.2-2 (rebuilt
+  with pkgrel=2) and removed again. After removal no package files remain
+  and `~/.config/dev.areen.omacam/camera.conf` is kept. The local install
+  was then restored.
+  Logs: uninstall-local.log, pkg-install.log, pkg-launch.txt,
+  pkg-upgrade.log, pkg-remove.log, install-restore.log, pkg-build.log,
+  pkg-build-prel2.log.
+
+Virtual camera (v4l2loopback):
+- `v4l2loopback-dkms` was installed and the loopback camera verified end to
+  end: a self-test on "OmacamTest (/dev/video8)" saved a 640x480 YUYV JPEG
+  and MP4. Removing the module while the app held the device was refused by
+  the kernel, so the disappearance test used USB driver unbind/rebind of the
+  real webcam instead. Log: loopback-selftest.log.
+
+Camera disconnect and recovery (USB unbind/rebind of device 3-7):
+- disconnect: a mid-stream unbind removed /dev/video0; the app reported
+  `measuredFps=0 state=No camera found`, the format field stayed empty and
+  the app exited cleanly; rebinding restored the device.
+  Log: usb-unbind.log.
+- recovery: unbind, then rebind while the UI ran with `--rescan-every 2`:
+  the app returned to Streaming without a restart. The synthetic re-plug
+  shuffled the video node numbers (the RGB camera became /dev/video1); the
+  app self-healed on the next run with the user's config and persisted the
+  new device id (`format=1920x1080 · MJPEG · 30 fps`, 20 fps).
+  Logs: usb-recovery.log, user-config-check.log.
+
+Still not run: multi-monitor placement (this machine has a single monitor),
+AUR/omarchy-pkgs submission, demo media. namcap and v4l2loopback-dkms remain
+installed as verification tooling.

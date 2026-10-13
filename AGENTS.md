@@ -40,8 +40,10 @@ backend), C++20, CMake + Ninja. Identity: `dev.areen.omacam`, name `Omacam`.
   `--rescan-every <seconds>`, `--tab-check <steps>` (see README).
 - Package recipe: `packaging/PKGBUILD` (source is the GitHub tag archive with
   a pinned digest). Build from a scratch copy with
-  `mise exec cmake@latest ninja@latest -- makepkg -fd`; the pacman install
-  lifecycle is not run on this machine.
+  `mise exec cmake@latest ninja@latest -- makepkg -fd`; the
+  install/upgrade/removal lifecycle was verified in `evidence/acceptance-4/`.
+- Privileged commands: run them through `pkexec` (a password dialog appears);
+  `sudo` needs a terminal. Do not wrap commands that already elevate.
 - Install: `./install.sh` (upgrade-safe); launcher check with `gtk-launch` and
   `hyprctl clients`.
 - Record evidence under `evidence/<stage>/`, update `VERIFICATION.md`, then

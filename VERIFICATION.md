@@ -186,7 +186,9 @@ traces; the other GUI checks used the installed binary. This session is
 a single 2560x1600 monitor at scale 2, so every GUI run here is a HiDPI run
 (`acceptance-3/display.txt`); multi-monitor placement is not applicable on
 this machine. Privileged steps (package lifecycle, USB unbind/rebind) were
-run via `pkexec`. Still not run: AUR/omarchy-pkgs submission and demo media.
+run via `pkexec`. Still not run: demo media. Packaging: an omarchy-pkgs
+contribution is open as `omacom/omarchy-pkgs` PR #1031, awaiting maintainer
+build approval; no AUR submission (dropped by the maintainer).
 
 ## Historical
 

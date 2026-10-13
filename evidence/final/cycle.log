@@ -1,0 +1,61 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+SELFTEST device Integrated_Webcam_FHD: Integrat (/dev/video0)
+SELFTEST state Streaming
+SELFTEST resolutions 1920x1080,1280x960,1280x720,640x480,640x360
+SELFTEST pixelFormats MJPEG,YUYV
+SELFTEST frameRates 30 fps
+SELFTEST selection 640x480 MJPEG 30
+SELFTEST timerCycle 3,10,0,3
+SELFTEST photoRequest timer=3
+SELFTEST timerCancel wasActive=true activeAfter=false
+SELFTEST photoSaved /tmp/opencode/final/cycle/photos/IMG_20261013_205825.jpg
+SELFTEST timerElapsed ms=3049 expected=3000
+SELFTEST message error=false Photo saved
+SELFTEST recordRequest seconds=2
+qt.multimedia.ffmpeg.encoder: Recording new media with muxer MP4 (MPEG-4 Part 14) to "/tmp/opencode/final/cycle/videos/VID_20261013_205826.mp4.part" with format: QMediaFormat::MPEG4, QMediaFormat::AudioCodec::AAC, QMediaFormat::VideoCodec::H264
+[libx264 @ 0x76db98006300] using SAR=1/1
+[libx264 @ 0x76db98006300] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x76db98006300] profile High 4:4:4 Predictive, level 3.0, 4:4:4, 10-bit
+SELFTEST recordStop
+[aac @ 0x76dba40037c0] Qavg: 467.148
+[mp4 @ 0x5768f863f800] Packet with invalid duration -2998 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1442 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -2997 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1563 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1559 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -2880 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -3002 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5768f863f800] Packet with invalid duration -1439 in stream 1
+[libx264 @ 0x76db98006300] frame I:1     Avg QP:32.57  size: 34323
+[libx264 @ 0x76db98006300] frame P:10    Avg QP:33.60  size: 11513
+[libx264 @ 0x76db98006300] frame B:28    Avg QP:36.62  size:  1435
+[libx264 @ 0x76db98006300] consecutive B-frames:  2.6%  5.1%  0.0% 92.3%
+[libx264 @ 0x76db98006300] mb I  I16..4:  1.2% 85.9% 12.8%
+[libx264 @ 0x76db98006300] mb P  I16..4:  0.0%  1.8%  0.2%  P16..4: 43.5% 28.1% 17.9%  0.0%  0.0%    skip: 8.4%
+[libx264 @ 0x76db98006300] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8: 32.1%  2.1%  0.6%  direct: 2.2%  skip:63.1%  L0:37.6% L1:57.2% BI: 5.2%
+[libx264 @ 0x76db98006300] 8x8 transform intra:86.2% inter:69.5%
+[libx264 @ 0x76db98006300] coded y,u,v intra: 94.3% 58.7% 42.4% inter: 19.7% 11.6% 4.4%
+[libx264 @ 0x76db98006300] i16 v,h,dc,p:  0% 76%  0% 24%
+[libx264 @ 0x76db98006300] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 10% 28% 13%  6%  9%  6% 10%  7% 11%
+[libx264 @ 0x76db98006300] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 26%  7%  9%  9%  6% 14%  7% 10%
+[libx264 @ 0x76db98006300] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x76db98006300] ref P L0: 54.4% 33.5% 12.2%
+[libx264 @ 0x76db98006300] ref B L0: 89.3%  9.1%  1.5%
+[libx264 @ 0x76db98006300] ref B L1: 97.9%  2.1%
+[libx264 @ 0x76db98006300] kb/s:780.49
+SELFTEST videoSaved /tmp/opencode/final/cycle/videos/VID_20261013_205826.mp4
+SELFTEST result photo=ok video=ok timer=ok cycle=ok
+SELFTEST message error=false Video saved

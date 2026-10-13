@@ -1,0 +1,81 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+SELFTEST device Integrated_Webcam_FHD: Integrat (/dev/video0)
+SELFTEST state Streaming
+SELFTEST resolutions 1920x1080,1280x960,1280x720,640x480,640x360
+SELFTEST pixelFormats MJPEG,YUYV
+SELFTEST frameRates 30 fps
+SELFTEST selection 1280x720 MJPEG 30
+SELFTEST photoRequest timer=0
+SELFTEST photoSaved /tmp/opencode/final/quit-record/photos/IMG_20261013_205853.jpg
+SELFTEST message error=false Photo saved
+SELFTEST recordRequest seconds=4
+qt.multimedia.ffmpeg.encoder: Recording new media with muxer MP4 (MPEG-4 Part 14) to "/tmp/opencode/final/quit-record/videos/VID_20261013_205854.mp4.part" with format: QMediaFormat::MPEG4, QMediaFormat::AudioCodec::AAC, QMediaFormat::VideoCodec::H264
+[libx264 @ 0x7c3b4c005ac0] using SAR=1/1
+[libx264 @ 0x7c3b4c005ac0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x7c3b4c005ac0] profile High 4:4:4 Predictive, level 3.1, 4:4:4, 10-bit
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1558 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2880 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1559 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1440 in stream 1
+SELFTEST quitDuringRecord
+[aac @ 0x7c3b400042c0] Qavg: 685.654
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2995 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1445 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1439 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1439 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1558 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x55c678c63e00] Packet with invalid duration -1560 in stream 1
+[libx264 @ 0x7c3b4c005ac0] frame I:1     Avg QP:32.60  size: 74721
+[libx264 @ 0x7c3b4c005ac0] frame P:21    Avg QP:32.93  size: 37265
+[libx264 @ 0x7c3b4c005ac0] frame B:61    Avg QP:35.81  size:  6557
+[libx264 @ 0x7c3b4c005ac0] consecutive B-frames:  1.2%  2.4%  0.0% 96.4%
+[libx264 @ 0x7c3b4c005ac0] mb I  I16..4:  1.8% 78.9% 19.3%
+[libx264 @ 0x7c3b4c005ac0] mb P  I16..4:  0.0%  4.3%  0.4%  P16..4: 42.9% 30.8% 16.9%  0.0%  0.0%    skip: 4.6%
+[libx264 @ 0x7c3b4c005ac0] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8: 33.7%  3.4%  1.1%  direct: 5.4%  skip:56.4%  L0:38.9% L1:56.7% BI: 4.4%
+[libx264 @ 0x7c3b4c005ac0] 8x8 transform intra:84.9% inter:64.2%
+[libx264 @ 0x7c3b4c005ac0] coded y,u,v intra: 92.3% 46.0% 31.2% inter: 25.4% 12.6% 5.5%
+[libx264 @ 0x7c3b4c005ac0] i16 v,h,dc,p: 30% 22%  3% 44%
+[libx264 @ 0x7c3b4c005ac0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 19% 10%  6% 12%  9% 12%  8% 12%
+[libx264 @ 0x7c3b4c005ac0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 13% 23% 10%  8% 10%  7% 12%  7% 10%
+[libx264 @ 0x7c3b4c005ac0] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x7c3b4c005ac0] ref P L0: 53.4% 31.8% 14.8%
+[libx264 @ 0x7c3b4c005ac0] ref B L0: 91.5%  7.4%  1.1%
+[libx264 @ 0x7c3b4c005ac0] ref B L1: 97.6%  2.4%
+[libx264 @ 0x7c3b4c005ac0] kb/s:2425.00
+SELFTEST videoSaved /tmp/opencode/final/quit-record/videos/VID_20261013_205854.mp4
+SELFTEST result photo=ok video=ok timer=ok cycle=ok
+SELFTEST message error=false Video saved
+SELFTEST postShutdown video=/tmp/opencode/final/quit-record/videos/VID_20261013_205854.mp4 exists=true

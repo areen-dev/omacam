@@ -1,0 +1,13 @@
+Test project /home/areen/Work/omarchy-camera/target
+    Start 1: tst_catalog
+1/4 Test #1: tst_catalog ......................   Passed    0.01 sec
+    Start 2: tst_settings
+2/4 Test #2: tst_settings .....................   Passed    0.01 sec
+    Start 3: tst_output_paths
+3/4 Test #3: tst_output_paths .................   Passed    0.01 sec
+    Start 4: tst_theme_parser
+4/4 Test #4: tst_theme_parser .................   Passed    0.01 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   0.03 sec

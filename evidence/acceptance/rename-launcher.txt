@@ -1,0 +1,4 @@
+gtk-launch dev.areen.omacam -> hyprctl clients:
+class=dev.areen.omacam title=Omacam
+installed: ~/.local/bin/dev.areen.omacam, dev.areen.omacam.desktop, dev.areen.omacam.svg
+old dev.areen.camera install removed

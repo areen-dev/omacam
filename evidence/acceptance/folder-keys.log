@@ -1,0 +1,7 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+Theme palette loaded from omarchy-theme-color: dark #090909 #808080
+** Message: 00:29:45.353: Connecting to org.freedesktop.Tracker3.Miner.Files
+nautilus-application-Message: 00:29:45.354: Failed to initialize display server connection: Cannot invoke method; proxy is for the well-known name org.gnome.Mutter.ServiceChannel without an owner, and proxy was constructed with the G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START flag
+** Message: 00:29:49.416: Connecting to org.freedesktop.Tracker3.Miner.Files

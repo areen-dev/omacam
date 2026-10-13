@@ -1,0 +1,9 @@
+T key cycle (focus checked before each press):
+press_1 self_timer_seconds=3
+press_2 self_timer_seconds=10
+press_3 self_timer_seconds=0
+
+Cycle logic self-test:
+SELFTEST timerCycle 3,10,0,3
+SELFTEST timerElapsed ms=3056 expected=3000
+SELFTEST result photo=ok video=ok timer=ok cycle=ok

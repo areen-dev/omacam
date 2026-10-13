@@ -1,0 +1,16 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+SELFTEST device Integrated_Webcam_FHD: Integrat (/dev/video0)
+SELFTEST state Streaming
+SELFTEST resolutions 1920x1080,1280x960,1280x720,640x480,640x360
+SELFTEST pixelFormats MJPEG,YUYV
+SELFTEST frameRates 30 fps
+SELFTEST selection 640x480 MJPEG 30
+SELFTEST photoRequest timer=0
+SELFTEST photoSaved /tmp/opencode/fix/record-fail/photos/IMG_20261013_220450.jpg
+SELFTEST message error=false Photo saved
+SELFTEST recordRequest seconds=2
+qt.multimedia.ffmpeg.encoder: Recording new media with muxer MP4 (MPEG-4 Part 14) to "/tmp/opencode/fix/record-fail/videos/VID_20261013_220451.mp4.part" with format: QMediaFormat::MPEG4, QMediaFormat::AudioCodec::AAC, QMediaFormat::VideoCodec::H264
+SELFTEST videoFailed Cannot open the output location for writing
+SELFTEST result photo=ok video=fail timer=ok cycle=ok
+SELFTEST message error=true Cannot open the output location for writing

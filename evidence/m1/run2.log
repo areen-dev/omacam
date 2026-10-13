@@ -1,0 +1,112 @@
+PROBE cpp main startup
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+qml: PROBE readyForCapture=true
+qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+qml: PROBE videoInputs=2
+qml: PROBE device[0] id=/dev/video0 default=true description=Integrated_Webcam_FHD: Integrat
+qml: PROBE format 640x480 fps=30-30 pixelFormat=29
+qml: PROBE format 1920x1080 fps=30-30 pixelFormat=29
+qml: PROBE format 1280x960 fps=30-30 pixelFormat=29
+qml: PROBE format 1280x720 fps=30-30 pixelFormat=29
+qml: PROBE format 640x360 fps=30-30 pixelFormat=29
+qml: PROBE format 1920x1080 fps=5-5 pixelFormat=17
+qml: PROBE format 1280x720 fps=10-10 pixelFormat=17
+qml: PROBE format 640x480 fps=30-30 pixelFormat=17
+qml: PROBE format 640x360 fps=30-30 pixelFormat=17
+qml: PROBE device[1] id=/dev/video2 default=false description=Integrated_Webcam_FHD: Integrat
+qml: PROBE format 360x360 fps=15-15 pixelFormat=24
+qml: PROBE cameraFormatNow=640x480 fps=30-30 pixelFormat=29
+qml: PROBE requestedFormat=640x480
+qml: PROBE readyForCapture=false
+qml: PROBE captureRequested id=1 path=/tmp/opencode/camera-probe/shot.jpg
+qml: PROBE imageError id=1 2 Cannot open device for writing: No such file or directory
+qml: PROBE readyForCapture=true
+qt.multimedia.ffmpeg.encoder: Recording new media with muxer MP4 (MPEG-4 Part 14) to "/tmp/opencode/camera-probe/rec.mp4" with format: QMediaFormat::MPEG4, QMediaFormat::AudioCodec::AAC, QMediaFormat::VideoCodec::H264
+qml: PROBE recorderActualLocation=file:///tmp/opencode/camera-probe/rec.mp4
+qml: PROBE recorderState=1
+qml: PROBE recordRequested location=file:///tmp/opencode/camera-probe/rec.mp4
+[libx264 @ 0x73cb58001c80] using SAR=1/1
+[libx264 @ 0x73cb58001c80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x73cb58001c80] profile High 4:4:4 Predictive, level 3.0, 4:4:4, 10-bit
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3002 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2882 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2997 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1443 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3003 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1559 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+qml: PROBE recordStopRequested
+[aac @ 0x73cb5c001c40] Qavg: 515.945
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1559 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1558 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1559 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3003 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2998 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x5b2b1849fd40] Packet with invalid duration -1560 in stream 1
+[libx264 @ 0x73cb58001c80] frame I:1     Avg QP:32.07  size:  2929
+[libx264 @ 0x73cb58001c80] frame P:30    Avg QP:32.08  size:   333
+[libx264 @ 0x73cb58001c80] frame B:90    Avg QP:33.43  size:   126
+[libx264 @ 0x73cb58001c80] consecutive B-frames:  0.8%  0.0%  0.0% 99.2%
+[libx264 @ 0x73cb58001c80] mb I  I16..4: 15.8% 83.7%  0.5%
+[libx264 @ 0x73cb58001c80] mb P  I16..4:  1.9%  1.1%  0.0%  P16..4:  6.1%  0.1%  0.1%  0.0%  0.0%    skip:90.7%
+[libx264 @ 0x73cb58001c80] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  6.0%  0.0%  0.0%  direct: 0.0%  skip:94.0%  L0:32.2% L1:67.8% BI: 0.0%
+[libx264 @ 0x73cb58001c80] 8x8 transform intra:61.1% inter:100.0%
+[libx264 @ 0x73cb58001c80] coded y,u,v intra: 12.2% 14.7% 0.0% inter: 0.3% 0.9% 0.0%
+[libx264 @ 0x73cb58001c80] i16 v,h,dc,p: 57% 21% 16%  6%
+[libx264 @ 0x73cb58001c80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28%  7% 51%  3%  3%  2%  3%  1%  1%
+[libx264 @ 0x73cb58001c80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 12% 19% 60%  2%  0%  3%  3%  1%  0%
+[libx264 @ 0x73cb58001c80] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x73cb58001c80] ref P L0: 68.9% 11.6% 19.5%
+[libx264 @ 0x73cb58001c80] ref B L0: 76.1% 20.9%  2.9%
+[libx264 @ 0x73cb58001c80] ref B L1: 91.0%  9.0%
+[libx264 @ 0x73cb58001c80] kb/s:32.06
+qml: PROBE recorderState=0
+qml: PROBE finished photoPath=/tmp/opencode/camera-probe/shot.jpg recorderState=0 actualLocation=file:///tmp/opencode/camera-probe/rec.mp4

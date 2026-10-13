@@ -1,0 +1,68 @@
+/home/areen/Work/omarchy-camera/packaging/dev.areen.omacam.desktop: hint: value item "Photography" in key "Categories" in group "Desktop Entry" can be extended with another category among the following categories: Graphics, or Office
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/areen/Work/omarchy-camera/target
+[1/37] Copying dev.areen.omacam qml sources into build dir
+[2/37] Copying dev.areen.omacam qml resources into build dir
+[3/37] Populating .qmlls.ini file at /home/areen/Work/omarchy-camera/target/.qt/.qmlls.build.ini
+[4/37] Automatic MOC and UIC for target camera-core
+[5/36] Running AUTOMOC file extraction for target camera-core
+[6/36] Running moc --collect-json for target camera-core
+[7/36] Linking CXX static library libcamera-core.a
+[8/36] Automatic MOC and UIC for target dev.areen.omacam
+[9/36] Running AUTOMOC file extraction for target dev.areen.omacam
+[10/36] Running moc --collect-json for target dev.areen.omacam
+[11/36] Automatic QML type registration for target dev.areen.omacam
+[12/36] Automatic MOC and UIC for target tst_catalog
+[13/35] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.aotstats
+[14/35] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.aotstats
+[15/35] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp.aotstats
+[16/35] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.aotstats
+[17/35] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.aotstats
+[18/35] Automatic MOC and UIC for target tst_theme_parser
+[19/34] Automatic MOC and UIC for target tst_output_paths
+[20/33] Linking CXX executable tst_catalog
+[21/33] Automatic MOC and UIC for target tst_settings
+[22/32] Linking CXX executable tst_settings
+[23/32] Linking CXX executable tst_output_paths
+[24/32] Linking CXX executable tst_theme_parser
+[25/32] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.o
+[26/32] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_qmltyperegistrations.cpp.o
+[27/32] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_autogen/mocs_compilation.cpp.o
+[28/32] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.o
+[29/32] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.o
+[30/32] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp.o
+[31/32] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.o
+[32/32] Linking CXX executable dev.areen.omacam
+Test project /home/areen/Work/omarchy-camera/target
+    Start 1: tst_catalog
+1/4 Test #1: tst_catalog ......................   Passed    0.00 sec
+    Start 2: tst_settings
+2/4 Test #2: tst_settings .....................   Passed    0.01 sec
+    Start 3: tst_output_paths
+3/4 Test #3: tst_output_paths .................   Passed    0.00 sec
+    Start 4: tst_theme_parser
+4/4 Test #4: tst_theme_parser .................   Passed    0.01 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   0.02 sec
+-- Install configuration: "Release"
+-- Installing: /home/areen/.local/bin/dev.areen.omacam
+-- Set non-toolchain portion of runtime path of "/home/areen/.local/bin/dev.areen.omacam" to "$ORIGIN:$ORIGIN/../lib"
+-- Up-to-date: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+-- Up-to-date: /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+
+Installed dev.areen.omacam
+  binary:  /home/areen/.local/bin/dev.areen.omacam
+  desktop: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+  icon:    /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+Uninstall with: ./install.sh --uninstall

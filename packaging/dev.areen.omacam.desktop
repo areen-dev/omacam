@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Omacam
+Comment=Webcam preview, photo and video capture
+Exec=dev.areen.omacam
+Icon=dev.areen.omacam
+Terminal=false
+StartupNotify=true
+StartupWMClass=dev.areen.omacam
+Categories=AudioVideo;Photography;
+Keywords=camera;webcam;photo;video;capture;

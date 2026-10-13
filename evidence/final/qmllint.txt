@@ -1,0 +1,447 @@
+Warning: src/qml/AppButton.qml:19:30: Unqualified access [unqualified]
+            return Qt.darker(Theme.danger, 1.15)
+                             ^^^^^
+Warning: src/qml/AppButton.qml:21:20: Unqualified access [unqualified]
+            return Theme.accent
+                   ^^^^^
+Warning: src/qml/AppButton.qml:23:31: Unqualified access [unqualified]
+            return Qt.lighter(Theme.surfaceAlt, 1.3)
+                              ^^^^^
+Warning: src/qml/AppButton.qml:24:46: Unqualified access [unqualified]
+        return root.subtle ? "transparent" : Theme.surfaceAlt
+                                             ^^^^^
+Warning: src/qml/AppButton.qml:27:30: Unqualified access [unqualified]
+    border.color: Qt.lighter(Theme.surfaceAlt, 1.5)
+                             ^^^^^
+Warning: src/qml/AppButton.qml:33:30: Unqualified access [unqualified]
+        color: root.active ? Theme.background : Theme.foreground
+                             ^^^^^
+Warning: src/qml/AppButton.qml:33:49: Unqualified access [unqualified]
+        color: root.active ? Theme.background : Theme.foreground
+                                                ^^^^^
+Warning: src/qml/Main.qml:14:12: Unqualified access [unqualified]
+    color: Theme.background
+           ^^^^^
+Warning: src/qml/Main.qml:35:22: Unqualified access [unqualified]
+        onActivated: CameraModel.takePhoto()
+                     ^^^^^^^^^^^
+Warning: src/qml/Main.qml:41:22: Unqualified access [unqualified]
+        onActivated: CameraModel.openPhotosDir()
+                     ^^^^^^^^^^^
+Warning: src/qml/Main.qml:47:22: Unqualified access [unqualified]
+        onActivated: CameraModel.recording ? CameraModel.stopRecording() : CameraModel.startRecording()
+                     ^^^^^^^^^^^
+Warning: src/qml/Main.qml:47:46: Unqualified access [unqualified]
+        onActivated: CameraModel.recording ? CameraModel.stopRecording() : CameraModel.startRecording()
+                                             ^^^^^^^^^^^
+Warning: src/qml/Main.qml:47:76: Unqualified access [unqualified]
+        onActivated: CameraModel.recording ? CameraModel.stopRecording() : CameraModel.startRecording()
+                                                                           ^^^^^^^^^^^
+Warning: src/qml/Main.qml:53:22: Unqualified access [unqualified]
+        onActivated: CameraModel.openVideosDir()
+                     ^^^^^^^^^^^
+Warning: src/qml/Main.qml:59:22: Unqualified access [unqualified]
+        onActivated: CameraModel.cycleTimer()
+                     ^^^^^^^^^^^
+Warning: src/qml/Main.qml:65:22: Unqualified access [unqualified]
+        onActivated: CameraModel.mirror = !CameraModel.mirror
+                     ^^^^^^^^^^^
+Warning: src/qml/Main.qml:65:44: Unqualified access [unqualified]
+        onActivated: CameraModel.mirror = !CameraModel.mirror
+                                           ^^^^^^^^^^^
+Warning: src/qml/Main.qml:118:36: Unqualified access [unqualified]
+        color: window.toastError ? Theme.danger : Theme.surfaceAlt
+                                   ^^^^^
+Warning: src/qml/Main.qml:118:51: Unqualified access [unqualified]
+        color: window.toastError ? Theme.danger : Theme.surfaceAlt
+                                                  ^^^^^
+Warning: src/qml/Main.qml:124:50: Unqualified access [unqualified]
+            color: window.toastError ? "white" : Theme.foreground
+                                                 ^^^^^
+Warning: src/qml/Main.qml:130:17: Unqualified access [unqualified]
+        target: CameraModel
+                ^^^^^^^^^^^
+Warning: src/qml/Main.qml:137:13: Unqualified access [unqualified]
+        if (CameraModel.startupWarning.length > 0)
+            ^^^^^^^^^^^
+Warning: src/qml/Main.qml:138:30: Unqualified access [unqualified]
+            window.showToast(CameraModel.startupWarning, false)
+                             ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:28:21: Unqualified access [unqualified]
+            xScale: CameraModel.mirror ? -1 : 1
+                    ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:32:28: Unqualified access [unqualified]
+    Component.onCompleted: CameraModel.attachVideoOutput(preview.videoSink)
+                           ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:37:13: Unqualified access [unqualified]
+            CameraModel.notePreviewFrame()
+            ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:49:18: Unqualified access [unqualified]
+        visible: CameraModel.hasCamera
+                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:57:23: Unqualified access [unqualified]
+                text: CameraModel.activeFormatLabel
+                      ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:64:34: Unqualified access [unqualified]
+                text: Math.round(CameraModel.measuredFps) + " fps"
+                                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:73:18: Unqualified access [unqualified]
+        visible: CameraModel.recording
+                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:80:16: Unqualified access [unqualified]
+        color: Theme.danger
+               ^^^^^
+Warning: src/qml/PreviewPane.qml:96:52: Unqualified access [unqualified]
+                text: "REC " + pane.formatDuration(CameraModel.recordingDuration)
+                                                   ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:106:18: Unqualified access [unqualified]
+        visible: CameraModel.timerActive
+                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:119:23: Unqualified access [unqualified]
+                text: CameraModel.timerRemaining
+                      ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:136:24: Unqualified access [unqualified]
+            onClicked: CameraModel.cancelTimer()
+                       ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:141:19: Unqualified access [unqualified]
+        visible: !CameraModel.hasCamera
+                  ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:162:23: Unqualified access [unqualified]
+                text: CameraModel.errorText
+                      ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:165:26: Unqualified access [unqualified]
+                visible: CameraModel.errorText.length > 0
+                         ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:171:28: Unqualified access [unqualified]
+                onClicked: CameraModel.refreshDevices()
+                           ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:177:18: Unqualified access [unqualified]
+        visible: CameraModel.state === CameraModel.Error
+                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:177:40: Unqualified access [unqualified]
+        visible: CameraModel.state === CameraModel.Error
+                                       ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:192:23: Unqualified access [unqualified]
+                text: CameraModel.errorText.length > 0 ? CameraModel.errorText : "Camera error"
+                      ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:192:58: Unqualified access [unqualified]
+                text: CameraModel.errorText.length > 0 ? CameraModel.errorText : "Camera error"
+                                                         ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:193:24: Unqualified access [unqualified]
+                color: Theme.danger
+                       ^^^^^
+Warning: src/qml/PreviewPane.qml:201:28: Unqualified access [unqualified]
+                onClicked: CameraModel.retry()
+                           ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:214:18: Unqualified access [unqualified]
+        visible: CameraModel.hasCamera
+                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:225:25: Unqualified access [unqualified]
+                active: CameraModel.mirror
+                        ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:226:28: Unqualified access [unqualified]
+                onClicked: CameraModel.mirror = !CameraModel.mirror
+                           ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:226:50: Unqualified access [unqualified]
+                onClicked: CameraModel.mirror = !CameraModel.mirror
+                                                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:234:71: Unqualified access [unqualified]
+                color: shutterMouse.containsMouse && shutterEnabled ? Theme.accent : Theme.foreground
+                                                                      ^^^^^
+Warning: src/qml/PreviewPane.qml:234:86: Unqualified access [unqualified]
+                color: shutterMouse.containsMouse && shutterEnabled ? Theme.accent : Theme.foreground
+                                                                                     ^^^^^
+Warning: src/qml/PreviewPane.qml:239:56: Unqualified access [unqualified]
+                readonly property bool shutterEnabled: CameraModel.imageCaptureReady && !CameraModel.recording
+                                                       ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:239:90: Unqualified access [unqualified]
+                readonly property bool shutterEnabled: CameraModel.imageCaptureReady && !CameraModel.recording
+                                                                                         ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:246:59: Unqualified access [unqualified]
+                    onClicked: if (parent.shutterEnabled) CameraModel.takePhoto()
+                                                          ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:252:23: Unqualified access [unqualified]
+                text: CameraModel.recording ? "Stop" : "Record"
+                      ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:254:25: Unqualified access [unqualified]
+                active: CameraModel.recording
+                        ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:255:28: Unqualified access [unqualified]
+                onClicked: CameraModel.recording ? CameraModel.stopRecording() : CameraModel.startRecording()
+                           ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:255:52: Unqualified access [unqualified]
+                onClicked: CameraModel.recording ? CameraModel.stopRecording() : CameraModel.startRecording()
+                                                   ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:255:82: Unqualified access [unqualified]
+                onClicked: CameraModel.recording ? CameraModel.stopRecording() : CameraModel.startRecording()
+                                                                                 ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:270:28: Unqualified access [unqualified]
+                onClicked: CameraModel.openPhotosDir()
+                           ^^^^^^^^^^^
+Warning: src/qml/PreviewPane.qml:278:28: Unqualified access [unqualified]
+                onClicked: CameraModel.openVideosDir()
+                           ^^^^^^^^^^^
+Warning: src/qml/SettingCombo.qml:20:16: Unqualified access [unqualified]
+        color: Theme.muted
+               ^^^^^
+Warning: src/qml/SettingCombo.qml:39:37: Unqualified access [unqualified]
+        onActivated: root.activated(index)
+                                    ^^^^^
+Info: "index" is ambiguous. Use a function instead: (index) => ...
+        onActivated: (index) => root.activated(index)
+                     ^^^^^^^^^^^
+Warning: src/qml/SettingCombo.qml:29:23: Unqualified access [unqualified]
+        palette.text: Theme.foreground
+                      ^^^^^
+Warning: src/qml/SettingCombo.qml:30:29: Unqualified access [unqualified]
+        palette.buttonText: Theme.foreground
+                            ^^^^^
+Warning: src/qml/SettingCombo.qml:31:25: Unqualified access [unqualified]
+        palette.button: Theme.surfaceAlt
+                        ^^^^^
+Warning: src/qml/SettingCombo.qml:32:23: Unqualified access [unqualified]
+        palette.base: Theme.surfaceAlt
+                      ^^^^^
+Warning: src/qml/SettingCombo.qml:33:25: Unqualified access [unqualified]
+        palette.window: Theme.surface
+                        ^^^^^
+Warning: src/qml/SettingCombo.qml:34:28: Unqualified access [unqualified]
+        palette.highlight: Theme.accent
+                           ^^^^^
+Warning: src/qml/SettingCombo.qml:35:34: Unqualified access [unqualified]
+        palette.highlightedText: Theme.background
+                                 ^^^^^
+Warning: src/qml/SettingCombo.qml:36:22: Unqualified access [unqualified]
+        palette.mid: Theme.surfaceAlt
+                     ^^^^^
+Warning: src/qml/SettingCombo.qml:37:23: Unqualified access [unqualified]
+        palette.dark: Theme.background
+                      ^^^^^
+Warning: src/qml/SettingsPanel.qml:12:12: Unqualified access [unqualified]
+    color: Theme.surface
+           ^^^^^
+Warning: src/qml/SettingsPanel.qml:17:25: Unqualified access [unqualified]
+        for (i = 0; i < CameraModel.devices.length; i++) {
+                        ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:18:17: Unqualified access [unqualified]
+            if (CameraModel.devices[i].id === CameraModel.deviceId) {
+                ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:18:47: Unqualified access [unqualified]
+            if (CameraModel.devices[i].id === CameraModel.deviceId) {
+                                              ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:26:25: Unqualified access [unqualified]
+        for (i = 0; i < CameraModel.resolutions.length; i++) {
+                        ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:27:17: Unqualified access [unqualified]
+            if (CameraModel.resolutions[i].value === CameraModel.resolution) {
+                ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:27:54: Unqualified access [unqualified]
+            if (CameraModel.resolutions[i].value === CameraModel.resolution) {
+                                                     ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:34:17: Unqualified access [unqualified]
+        index = CameraModel.pixelFormats.indexOf(CameraModel.pixelFormat)
+                ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:34:50: Unqualified access [unqualified]
+        index = CameraModel.pixelFormats.indexOf(CameraModel.pixelFormat)
+                                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:38:25: Unqualified access [unqualified]
+        for (i = 0; i < CameraModel.frameRates.length; i++) {
+                        ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:39:26: Unqualified access [unqualified]
+            if (Math.abs(CameraModel.frameRates[i].value - CameraModel.frameRate) < 0.01) {
+                         ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:39:60: Unqualified access [unqualified]
+            if (Math.abs(CameraModel.frameRates[i].value - CameraModel.frameRate) < 0.01) {
+                                                           ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:46:54: Unqualified access [unqualified]
+        timerCombo.currentIndex = [0, 3, 10].indexOf(CameraModel.timerSeconds)
+                                                     ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:52:17: Unqualified access [unqualified]
+        target: CameraModel
+                ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:70:24: Unqualified access [unqualified]
+                color: Theme.foreground
+                       ^^^^^
+Warning: src/qml/SettingsPanel.qml:98:28: Unqualified access [unqualified]
+                    model: CameraModel.devices
+                           ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:101:34: Unqualified access [unqualified]
+                    onActivated: CameraModel.selectDevice(currentValue)
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:108:28: Unqualified access [unqualified]
+                    model: CameraModel.resolutions
+                           ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:111:34: Unqualified access [unqualified]
+                    onActivated: CameraModel.setResolution(currentValue)
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:118:28: Unqualified access [unqualified]
+                    model: CameraModel.pixelFormats
+                           ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:119:34: Unqualified access [unqualified]
+                    onActivated: CameraModel.setPixelFormat(currentText)
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:119:61: Unqualified access [unqualified]
+                    onActivated: CameraModel.setPixelFormat(currentText)
+                                                            ^^^^^^^^^^^
+Info: Did you mean "currentIndex"?
+                    onActivated: CameraModel.setPixelFormat(currentIndex)
+                                                            ^^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:126:28: Unqualified access [unqualified]
+                    model: CameraModel.frameRates
+                           ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:129:34: Unqualified access [unqualified]
+                    onActivated: CameraModel.setFrameRate(currentValue)
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:143:34: Unqualified access [unqualified]
+                    onActivated: CameraModel.timerSeconds = currentValue
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:149:28: Unqualified access [unqualified]
+                    color: Theme.surfaceAlt
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:158:32: Unqualified access [unqualified]
+                        color: Theme.foreground
+                               ^^^^^
+Warning: src/qml/SettingsPanel.qml:163:34: Unqualified access [unqualified]
+                        checked: CameraModel.micEnabled
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:164:34: Unqualified access [unqualified]
+                        enabled: CameraModel.micAvailable
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:168:36: Unqualified access [unqualified]
+                        onToggled: CameraModel.micEnabled = checked
+                                   ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:165:44: Unqualified access [unqualified]
+                        palette.highlight: Theme.accent
+                                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:166:39: Unqualified access [unqualified]
+                        palette.text: Theme.foreground
+                                      ^^^^^
+Warning: src/qml/SettingsPanel.qml:167:39: Unqualified access [unqualified]
+                        palette.base: Theme.surfaceAlt
+                                      ^^^^^
+Warning: src/qml/SettingsPanel.qml:174:31: Unqualified access [unqualified]
+                    visible: !CameraModel.micAvailable
+                              ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:176:28: Unqualified access [unqualified]
+                    color: Theme.muted
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:187:32: Unqualified access [unqualified]
+                        color: Theme.foreground
+                               ^^^^^
+Warning: src/qml/SettingsPanel.qml:192:34: Unqualified access [unqualified]
+                        checked: CameraModel.mirror
+                                 ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:196:36: Unqualified access [unqualified]
+                        onToggled: CameraModel.mirror = checked
+                                   ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:193:44: Unqualified access [unqualified]
+                        palette.highlight: Theme.accent
+                                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:194:39: Unqualified access [unqualified]
+                        palette.text: Theme.foreground
+                                      ^^^^^
+Warning: src/qml/SettingsPanel.qml:195:39: Unqualified access [unqualified]
+                        palette.base: Theme.surfaceAlt
+                                      ^^^^^
+Warning: src/qml/SettingsPanel.qml:203:28: Unqualified access [unqualified]
+                    color: Theme.surfaceAlt
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:208:28: Unqualified access [unqualified]
+                    color: Theme.muted
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:215:27: Unqualified access [unqualified]
+                    text: CameraModel.photosDir
+                          ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:217:28: Unqualified access [unqualified]
+                    color: Theme.foreground
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:218:43: Unqualified access [unqualified]
+                    placeholderTextColor: Theme.muted
+                                          ^^^^^
+Warning: src/qml/SettingsPanel.qml:229:40: Unqualified access [unqualified]
+                    onEditingFinished: CameraModel.photosDir = text
+                                       ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:220:35: Unqualified access [unqualified]
+                    palette.base: Theme.surfaceAlt
+                                  ^^^^^
+Warning: src/qml/SettingsPanel.qml:221:35: Unqualified access [unqualified]
+                    palette.text: Theme.foreground
+                                  ^^^^^
+Warning: src/qml/SettingsPanel.qml:222:40: Unqualified access [unqualified]
+                    palette.highlight: Theme.accent
+                                       ^^^^^
+Warning: src/qml/SettingsPanel.qml:224:32: Unqualified access [unqualified]
+                        color: Theme.surfaceAlt
+                               ^^^^^
+Warning: src/qml/SettingsPanel.qml:227:50: Unqualified access [unqualified]
+                        border.color: Qt.lighter(Theme.surfaceAlt, 1.4)
+                                                 ^^^^^
+Warning: src/qml/SettingsPanel.qml:235:32: Unqualified access [unqualified]
+                    onClicked: CameraModel.openPhotosDir()
+                               ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:240:28: Unqualified access [unqualified]
+                    color: Theme.muted
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:247:27: Unqualified access [unqualified]
+                    text: CameraModel.videosDir
+                          ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:249:28: Unqualified access [unqualified]
+                    color: Theme.foreground
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:250:43: Unqualified access [unqualified]
+                    placeholderTextColor: Theme.muted
+                                          ^^^^^
+Warning: src/qml/SettingsPanel.qml:261:40: Unqualified access [unqualified]
+                    onEditingFinished: CameraModel.videosDir = text
+                                       ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:252:35: Unqualified access [unqualified]
+                    palette.base: Theme.surfaceAlt
+                                  ^^^^^
+Warning: src/qml/SettingsPanel.qml:253:35: Unqualified access [unqualified]
+                    palette.text: Theme.foreground
+                                  ^^^^^
+Warning: src/qml/SettingsPanel.qml:254:40: Unqualified access [unqualified]
+                    palette.highlight: Theme.accent
+                                       ^^^^^
+Warning: src/qml/SettingsPanel.qml:256:32: Unqualified access [unqualified]
+                        color: Theme.surfaceAlt
+                               ^^^^^
+Warning: src/qml/SettingsPanel.qml:259:50: Unqualified access [unqualified]
+                        border.color: Qt.lighter(Theme.surfaceAlt, 1.4)
+                                                 ^^^^^
+Warning: src/qml/SettingsPanel.qml:267:32: Unqualified access [unqualified]
+                    onClicked: CameraModel.openVideosDir()
+                               ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:273:28: Unqualified access [unqualified]
+                    color: Theme.surfaceAlt
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:278:39: Unqualified access [unqualified]
+                    text: "State: " + CameraModel.stateText
+                                      ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:279:28: Unqualified access [unqualified]
+                    color: Theme.muted
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:286:30: Unqualified access [unqualified]
+                    visible: CameraModel.errorText.length > 0
+                             ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:287:27: Unqualified access [unqualified]
+                    text: CameraModel.errorText
+                          ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:288:28: Unqualified access [unqualified]
+                    color: Theme.danger
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:295:30: Unqualified access [unqualified]
+                    visible: CameraModel.startupWarning.length > 0
+                             ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:296:27: Unqualified access [unqualified]
+                    text: CameraModel.startupWarning
+                          ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:297:28: Unqualified access [unqualified]
+                    color: Theme.muted
+                           ^^^^^
+Warning: src/qml/SettingsPanel.qml:305:32: Unqualified access [unqualified]
+                    onClicked: CameraModel.refreshDevices()
+                               ^^^^^^^^^^^
+Warning: src/qml/SettingsPanel.qml:311:28: Unqualified access [unqualified]
+                    color: Theme.muted
+                           ^^^^^

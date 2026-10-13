@@ -1,0 +1,3 @@
+enumValue: QVariant(Invalid)
+stateValue: QVariant(int, 1)
+isBeta: QVariant(bool, false)

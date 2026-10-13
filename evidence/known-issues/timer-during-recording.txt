@@ -1,0 +1,7 @@
+Timer-during-recording defect: not re-run in the final pass.
+The check needs keyboard focus on a live window. In the final run the focus
+guard aborted the test before any key injection because another window held
+focus.
+Earlier confirmation (2026-09-21): with the self-timer at 3 s, the shutter key
+was pressed and then the record key; IMG_*.jpg appeared in the photos folder
+while VID_*.mp4.part was still recording.

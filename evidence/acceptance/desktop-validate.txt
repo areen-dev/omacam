@@ -1,0 +1,1 @@
+packaging/dev.areen.camera.desktop: hint: value item "Photography" in key "Categories" in group "Desktop Entry" can be extended with another category among the following categories: Graphics, or Office

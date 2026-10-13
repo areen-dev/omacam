@@ -1,0 +1,57 @@
+[1/57] Copying dev.areen.omacam qml sources into build dir
+[2/57] Copying dev.areen.omacam qml resources into build dir
+[3/57] Populating .qmlls.ini file at /tmp/opencode/final/build/.qt/.qmlls.build.ini
+[4/57] Automatic MOC and UIC for target camera-core
+[5/57] Running AUTOMOC file extraction for target camera-core
+[6/57] Running moc --collect-json for target camera-core
+[7/57] Building CXX object CMakeFiles/camera-core.dir/camera-core_autogen/mocs_compilation.cpp.o
+[8/57] Running qmlimportscanner for dev.areen.omacam
+[9/57] Building CXX object CMakeFiles/camera-core.dir/src/theme/ThemeParser.cpp.o
+[10/57] Building CXX object CMakeFiles/camera-core.dir/src/camera/CatalogFormat.cpp.o
+[11/57] Building CXX object CMakeFiles/camera-core.dir/src/config/OutputPaths.cpp.o
+[12/57] Building CXX object CMakeFiles/camera-core.dir/src/config/SettingsStore.cpp.o
+[13/57] Linking CXX static library libcamera-core.a
+[14/57] Automatic MOC and UIC for target dev.areen.omacam
+[15/57] Running AUTOMOC file extraction for target dev.areen.omacam
+[16/57] Running rcc for resource qmake_dev_areen_omacam
+[17/57] Running moc --collect-json for target dev.areen.omacam
+[18/57] Running rcc for resource dev_areen_omacam_raw_qml_0_extra_qmldirs
+[19/57] Generating .rcc/qmlcache/dev.areen.omacam_qmlcache_loader.cpp
+[20/57] Running rcc for resource dev_areen_omacam_raw_qml_0
+[21/57] Automatic QML type registration for target dev.areen.omacam
+[22/57] Automatic MOC and UIC for target tst_output_paths
+[23/57] Automatic MOC and UIC for target tst_theme_parser
+[24/57] Building CXX object CMakeFiles/tst_output_paths.dir/tst_output_paths_autogen/mocs_compilation.cpp.o
+[25/57] Automatic MOC and UIC for target tst_catalog
+[26/57] Building CXX object CMakeFiles/tst_catalog.dir/tst_catalog_autogen/mocs_compilation.cpp.o
+[27/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.aotstats
+[28/57] Automatic MOC and UIC for target tst_settings
+[29/57] Building CXX object CMakeFiles/tst_theme_parser.dir/tst_theme_parser_autogen/mocs_compilation.cpp.o
+[30/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.aotstats
+[31/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp.aotstats
+[32/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.aotstats
+[33/57] Building CXX object CMakeFiles/tst_settings.dir/tst_settings_autogen/mocs_compilation.cpp.o
+[34/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.aotstats
+[35/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/theme/ThemePalette.cpp.o
+[36/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_autogen/mocs_compilation.cpp.o
+[37/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.qt/rcc/qrc_qmake_dev_areen_omacam.cpp.o
+[38/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/main.cpp.o
+[39/57] Building CXX object CMakeFiles/tst_catalog.dir/tests/tst_catalog.cpp.o
+[40/57] Building CXX object CMakeFiles/tst_theme_parser.dir/tests/tst_theme_parser.cpp.o
+[41/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_qmltyperegistrations.cpp.o
+[42/57] Building CXX object CMakeFiles/tst_output_paths.dir/tests/tst_output_paths.cpp.o
+[43/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.o
+[44/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_qmlcache_loader.cpp.o
+[45/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.qt/rcc/qrc_dev_areen_omacam_raw_qml_0.cpp.o
+[46/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.qt/rcc/qrc_dev_areen_omacam_raw_qml_0_extra_qmldirs.cpp.o
+[47/57] Linking CXX executable tst_output_paths
+[48/57] Linking CXX executable tst_catalog
+[49/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/camera/CameraModel.cpp.o
+[50/57] Building CXX object CMakeFiles/tst_settings.dir/tests/tst_settings.cpp.o
+[51/57] Linking CXX executable tst_theme_parser
+[52/57] Linking CXX executable tst_settings
+[53/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp.o
+[54/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.o
+[55/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.o
+[56/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.o
+[57/57] Linking CXX executable dev.areen.omacam

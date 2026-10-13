@@ -1,0 +1,6 @@
+codec_name=aac
+/tmp/opencode/fix/selftest-720/photos/IMG_20261013_220418.jpg JPEG 1280x720 1280x720+0+0 8-bit sRGB 221393B 0.000u 0:00.000
+codec_name=h264
+width=1920
+height=1080
+/tmp/opencode/fix/selftest-1080/photos/IMG_20261013_220432.jpg JPEG 1920x1080 1920x1080+0+0 8-bit sRGB 424803B 0.000u 0:00.000

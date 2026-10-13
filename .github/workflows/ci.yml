@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - run: pacman-key --init
+      - run: pacman-key --populate archlinux
+      - run: pacman -Syu --noconfirm
+      - run: pacman -S --noconfirm base-devel git cmake ninja qt6-base qt6-declarative qt6-multimedia desktop-file-utils
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build
+      - run: ctest --test-dir build --output-on-failure
+      - run: desktop-file-validate packaging/dev.areen.omacam.desktop
+      - run: /usr/lib/qt6/bin/qmllint -I /usr/lib/qt6/qml src/qml/*.qml

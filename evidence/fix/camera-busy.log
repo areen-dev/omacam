@@ -1,0 +1,15 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+SELFTEST device Integrated_Webcam_FHD: Integrat (/dev/video0)
+SELFTEST state Camera error
+SELFTEST resolutions 1920x1080,1280x960,1280x720,640x480,640x360
+SELFTEST pixelFormats MJPEG,YUYV
+SELFTEST frameRates 30 fps
+SELFTEST selection 640x480 MJPEG 30
+SELFTEST photoRequest timer=0
+SELFTEST photoFailed Camera is not running
+SELFTEST message error=true Camera is not running
+SELFTEST recordRequest seconds=2
+SELFTEST videoFailed Camera is not running
+SELFTEST result photo=fail video=fail timer=ok cycle=ok
+SELFTEST message error=true Camera is not running

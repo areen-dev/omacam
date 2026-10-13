@@ -1,0 +1,86 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+qt.qpa.services: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+SELFTEST device Integrated_Webcam_FHD: Integrat (/dev/video0)
+SELFTEST state Streaming
+SELFTEST resolutions 1920x1080,1280x960,1280x720,640x480,640x360
+SELFTEST pixelFormats MJPEG,YUYV
+SELFTEST frameRates 30 fps
+SELFTEST selection 1280x720 MJPEG 30
+SELFTEST photoRequest
+SELFTEST photoSaved /tmp/opencode/camera-acceptance/regression/photos/IMG_20260919_232009.jpg
+SELFTEST message error=false Photo saved
+SELFTEST recordRequest seconds=3
+qt.multimedia.ffmpeg.encoder: Recording new media with muxer MP4 (MPEG-4 Part 14) to "/tmp/opencode/camera-acceptance/regression/videos/VID_20260919_232010.mp4.part" with format: QMediaFormat::MPEG4, QMediaFormat::AudioCodec::AAC, QMediaFormat::VideoCodec::H264
+[libx264 @ 0x7c3f94004340] using SAR=1/1
+[libx264 @ 0x7c3f94004340] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x7c3f94004340] profile High 4:4:4 Predictive, level 3.1, 4:4:4, 10-bit
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2039 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2040 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1918 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1082 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1920 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1080 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2040 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2040 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1920 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1078 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2039 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -961 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2040 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1919 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1081 in stream 1
+SELFTEST recordStop
+[aac @ 0x7c3f88005f00] Qavg: 378.628
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1920 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1080 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2042 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2039 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -959 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1918 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1082 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2040 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -962 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2042 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1920 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1080 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1920 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2042 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2041 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1919 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1081 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2041 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -960 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -2038 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -962 in stream 1
+[mp4 @ 0x63b8fb6d2fc0] Packet with invalid duration -1080 in stream 1
+[libx264 @ 0x7c3f94004340] frame I:1     Avg QP:33.29  size: 66466
+[libx264 @ 0x7c3f94004340] frame P:24    Avg QP:34.46  size: 36372
+[libx264 @ 0x7c3f94004340] frame B:70    Avg QP:36.86  size: 10321
+[libx264 @ 0x7c3f94004340] consecutive B-frames:  1.1%  2.1%  0.0% 96.8%
+[libx264 @ 0x7c3f94004340] mb I  I16..4:  6.1% 80.8% 13.1%
+[libx264 @ 0x7c3f94004340] mb P  I16..4:  0.2%  9.6%  1.0%  P16..4: 37.6% 19.8% 13.2%  0.0%  0.0%    skip:18.6%
+[libx264 @ 0x7c3f94004340] mb B  I16..4:  0.0%  0.5%  0.1%  B16..8: 31.0%  3.0%  1.7%  direct: 8.5%  skip:55.4%  L0:39.5% L1:56.9% BI: 3.7%
+[libx264 @ 0x7c3f94004340] 8x8 transform intra:86.8% inter:56.3%
+[libx264 @ 0x7c3f94004340] coded y,u,v intra: 91.0% 29.5% 12.6% inter: 26.9% 7.3% 2.6%
+[libx264 @ 0x7c3f94004340] i16 v,h,dc,p: 45% 13%  6% 35%
+[libx264 @ 0x7c3f94004340] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu:  9% 10% 20%  7% 13%  8% 13%  8% 11%
+[libx264 @ 0x7c3f94004340] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 10% 12% 17%  9% 16%  8% 13%  7% 10%
+[libx264 @ 0x7c3f94004340] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x7c3f94004340] ref P L0: 55.4% 31.4% 13.2%
+[libx264 @ 0x7c3f94004340] ref B L0: 91.9%  6.6%  1.5%
+[libx264 @ 0x7c3f94004340] ref B L1: 97.3%  2.7%
+[libx264 @ 0x7c3f94004340] kb/s:4196.54
+SELFTEST videoSaved /tmp/opencode/camera-acceptance/regression/videos/VID_20260919_232010.mp4
+SELFTEST result photo=ok video=ok
+SELFTEST message error=false Video saved

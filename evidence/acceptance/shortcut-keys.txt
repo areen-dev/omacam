@@ -1,0 +1,9 @@
+Space key -> photo:
+-rw-r--r-- 1 areen areen 84116 Sep 20 00:27 IMG_20260920_002758.jpg
+
+R key -> video:
+-rw-r--r-- 1 areen areen 267377 Sep 20 00:28 VID_20260920_002801.mp4
+
+P key -> file manager:
+org.gnome.Nautilus title=photos
+org.gnome.Nautilus title=videos

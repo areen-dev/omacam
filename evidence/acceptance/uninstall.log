@@ -1,0 +1,5 @@
+Removed dev.areen.camera application files.
+Kept user data:
+  settings: ~/.config/dev.areen.camera/camera.conf
+  photos:   ~/Pictures/Camera (or the configured folder)
+  videos:   ~/Videos/Camera (or the configured folder)

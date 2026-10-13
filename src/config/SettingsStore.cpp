@@ -7,6 +7,8 @@
 #include <QSaveFile>
 #include <QStandardPaths>
 
+#include <cmath>
+
 namespace {
 
 QString quoteString(const QString &value)
@@ -83,6 +85,12 @@ SettingsStore::LoadStatus SettingsStore::load()
             m_status = LoadStatus::Defaults;
             return m_status;
         }
+    }
+
+    if (QFileInfo(sourcePath).size() > 1024 * 1024) {
+        m_status = LoadStatus::Unreadable;
+        m_statusMessage = QStringLiteral("Settings file is too large; using defaults");
+        return m_status;
     }
 
     QFile file(sourcePath);
@@ -201,7 +209,7 @@ QMap<QString, QVariant> SettingsStore::parseIni(const QString &text, bool *ok)
             }
             bool doubleOk = false;
             const double doubleValue = rawValue.toDouble(&doubleOk);
-            if (doubleOk) {
+            if (doubleOk && std::isfinite(doubleValue)) {
                 result.insert(key, doubleValue);
                 continue;
             }

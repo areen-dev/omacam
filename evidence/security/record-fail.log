@@ -1,0 +1,15 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+SELFTEST device Integrated_Webcam_FHD: Integrat (/dev/video1)
+SELFTEST state Streaming
+SELFTEST resolutions 1920x1080,1280x960,1280x720,640x480,640x360
+SELFTEST pixelFormats MJPEG,YUYV
+SELFTEST frameRates 30 fps
+SELFTEST selection 640x480 MJPEG 30
+SELFTEST photoRequest timer=0
+SELFTEST photoSaved /tmp/opencode/sec/record-fail/photos/IMG_20261014_001635.jpg
+SELFTEST message error=false Photo saved
+SELFTEST recordRequest seconds=2
+SELFTEST videoFailed Could not create the recording file
+SELFTEST result photo=ok video=fail timer=ok cycle=ok
+SELFTEST message error=true Could not create the recording file

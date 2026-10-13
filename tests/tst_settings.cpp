@@ -14,6 +14,8 @@ private slots:
     void initTestCase();
     void parsesTypedValues();
     void rejectsMalformedLines();
+    void treatsNonFiniteNumbersAsStrings();
+    void rejectsOversizedFile();
     void roundTripsValues();
     void defaultsWhenFileMissing();
     void savesAndReloadsAtomically();
@@ -58,6 +60,34 @@ void TestSettings::rejectsMalformedLines()
     bool ok = false;
     SettingsStore::parseIni(QStringLiteral("resolution=640x480\nthis line has no separator\n"), &ok);
     QVERIFY(!ok);
+}
+
+void TestSettings::treatsNonFiniteNumbersAsStrings()
+{
+    bool ok = false;
+    const QMap<QString, QVariant> values = SettingsStore::parseIni(
+        QStringLiteral("a=inf\nb=nan\nd=30.5\n"), &ok);
+    QVERIFY(ok);
+    QCOMPARE(values.value(QStringLiteral("a")).toString(), QStringLiteral("inf"));
+    QCOMPARE(values.value(QStringLiteral("b")).toString(), QStringLiteral("nan"));
+    QCOMPARE(values.value(QStringLiteral("d")).toDouble(), 30.5);
+}
+
+void TestSettings::rejectsOversizedFile()
+{
+    QTemporaryDir dir;
+    const QString path = dir.filePath(QStringLiteral("camera.conf"));
+    QFile file(path);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    QByteArray payload(1024 * 1024 + 1, 'a');
+    payload.append('\n');
+    QCOMPARE(file.write(payload), static_cast<qint64>(payload.size()));
+    file.close();
+
+    SettingsStore store(path);
+    QCOMPARE(store.load(), SettingsStore::LoadStatus::Unreadable);
+    QVERIFY(store.statusMessage().contains(QStringLiteral("too large")));
+    QCOMPARE(store.value(QStringLiteral("mirror"), true).toBool(), true);
 }
 
 void TestSettings::roundTripsValues()

@@ -15,6 +15,8 @@ private slots:
     void buildsTimestampedNames();
     void resolvesCollisions();
     void avoidsCollisionCap();
+    void treatsSymlinksAsTaken();
+    void sanitizesPaths();
     void handlesPartSuffixes();
     void ensuresDirectories();
 };
@@ -53,6 +55,31 @@ void TestOutputPaths::avoidsCollisionCap()
                                                  });
     QVERIFY(path.startsWith(QStringLiteral("/tmp/cam/IMG_20260919_230507_1000-")));
     QVERIFY(path.endsWith(QStringLiteral(".jpg")));
+}
+
+void TestOutputPaths::treatsSymlinksAsTaken()
+{
+    QTemporaryDir dir;
+    const QString link = dir.filePath(QStringLiteral("link.jpg"));
+    QVERIFY(QFile::link(dir.filePath(QStringLiteral("missing-target")), link));
+    QVERIFY(!QFileInfo::exists(link));
+    QVERIFY(output::pathTaken(link));
+    QVERIFY(!output::pathTaken(dir.filePath(QStringLiteral("free.jpg"))));
+
+    QFile real(dir.filePath(QStringLiteral("real.jpg")));
+    QVERIFY(real.open(QIODevice::WriteOnly));
+    QVERIFY(real.write("x") == 1);
+    real.close();
+    QVERIFY(output::pathTaken(real.fileName()));
+}
+
+void TestOutputPaths::sanitizesPaths()
+{
+    QCOMPARE(output::sanitizedPath(QStringLiteral("  /tmp/cam  ")), QStringLiteral("/tmp/cam"));
+    QCOMPARE(output::sanitizedPath(QStringLiteral("/tmp/a\nb\rc\t.jpg")), QStringLiteral("/tmp/abc.jpg"));
+    QCOMPARE(output::sanitizedPath(QStringLiteral("\n\r\t ")), QString());
+    QCOMPARE(output::sanitizedPath(QStringLiteral("/tmp/") + QChar(0x7f) + QStringLiteral("bell")),
+             QStringLiteral("/tmp/bell"));
 }
 
 void TestOutputPaths::handlesPartSuffixes()

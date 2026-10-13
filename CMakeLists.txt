@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(omacam
-    VERSION 0.1.2
+    VERSION 0.1.3
     DESCRIPTION "Omacam camera app for Omarchy"
     LANGUAGES CXX
 )
@@ -9,6 +9,22 @@ project(omacam
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+include(CheckPIESupported)
+check_pie_supported()
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    add_compile_options(
+        -fstack-protector-strong
+        -fstack-clash-protection
+        $<$<OR:$<CONFIG:Release>,$<CONFIG:RelWithDebInfo>,$<CONFIG:MinSizeRel>>:-D_FORTIFY_SOURCE=3>
+    )
+    add_link_options(-Wl,-z,relro,-z,now)
+    if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(x86_64|AMD64)$")
+        add_compile_options(-fcf-protection=full)
+    endif()
+endif()
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick QuickControls2 Multimedia Concurrent Test)
 

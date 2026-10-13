@@ -1,0 +1,26 @@
+Symlink proof of concept (2026-10-14)
+
+Setup: a photos folder and a videos folder with 420 broken symlinks planted
+for a +/- 3 minute timestamp window:
+
+  photos/IMG_<ts>.jpg        -> /tmp/opencode/sec/victim-photo.jpg (missing target)
+  videos/VID_<ts>.mp4.part   -> /tmp/opencode/sec/victim-video.mp4 (missing target)
+
+Before (0.1.2):
+
+  command: dev.areen.omacam --self-test .../run --format 640x480 --seconds 2
+  exit 0, result photo=ok video=ok timer=ok cycle=ok
+  /tmp/opencode/sec/victim-photo.jpg    81706 bytes  JPEG image data, 640x480
+  /tmp/opencode/sec/victim-video.mp4   185290 bytes  ISO Media, MP4
+  (the app followed the planted symlinks, wrote both files outside the
+  selected folders and still reported success)
+
+After (fixed build):
+
+  same command: exit 0, result ok
+  victim files: absent
+  media saved under collision-suffixed, symlink-free names:
+    photos/IMG_20261014_001601_1.jpg
+    videos/VID_20261014_001602_1.mp4
+
+Raw logs: symlink-poc-before.log, symlink-poc-after.log.

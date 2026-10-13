@@ -18,7 +18,7 @@ Omarchy menu, the palette follows a full `omarchy theme set` switch, and the
 package recipe's pacman install, upgrade and removal lifecycle is verified;
 a README screenshot was deliberately omitted for
 privacy.
-Version 0.1.2 is the current release; the audit record is in
+Version 0.1.3 is the current release; the audit record is in
 [known issues](KNOWN-ISSUES.md).
 Intended Omarchy target: 4 / Hyprland; this is the intended target, not a tested
 compatibility range.
@@ -116,5 +116,6 @@ Kept on uninstall: `~/.config/dev.areen.omacam/camera.conf`,
 ## Evidence
 
 See [verification](VERIFICATION.md) and [credits](CREDITS.md). Architecture is
-documented in [ARCHITECTURE.md](ARCHITECTURE.md); the source is [MIT](LICENSE)
+documented in [ARCHITECTURE.md](ARCHITECTURE.md), security properties and the
+review history in [SECURITY.md](SECURITY.md); the source is [MIT](LICENSE)
 licensed. This community badge does not imply official acceptance.

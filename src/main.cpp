@@ -237,7 +237,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication::setApplicationName(QStringLiteral("dev.areen.omacam"));
     QGuiApplication::setApplicationDisplayName(QStringLiteral("Omacam"));
-    QGuiApplication::setApplicationVersion(QStringLiteral("0.1.2"));
+    QGuiApplication::setApplicationVersion(QStringLiteral("0.1.3"));
     QGuiApplication::setDesktopFileName(QStringLiteral("dev.areen.omacam"));
 
     QGuiApplication app(argc, argv);

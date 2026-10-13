@@ -16,6 +16,7 @@
 #include <QImageWriter>
 #include <QMediaFormat>
 #include <QMetaEnum>
+#include <QSaveFile>
 #include <QThreadPool>
 #include <QUrl>
 #include <QVideoFrameFormat>
@@ -48,8 +49,8 @@ CameraModel::CameraModel(bool sessionOnly, QObject *parent)
     if (status != SettingsStore::LoadStatus::Loaded && status != SettingsStore::LoadStatus::Defaults)
         setStartupWarning(m_settings->statusMessage());
 
-    m_photosDir = m_settings->value(kPhotosDirKey, output::picturesDir()).toString();
-    m_videosDir = m_settings->value(kVideosDirKey, output::videosDir()).toString();
+    m_photosDir = output::sanitizedPath(m_settings->value(kPhotosDirKey, output::picturesDir()).toString());
+    m_videosDir = output::sanitizedPath(m_settings->value(kVideosDirKey, output::videosDir()).toString());
     if (m_photosDir.isEmpty())
         m_photosDir = output::picturesDir();
     if (m_videosDir.isEmpty())
@@ -119,7 +120,7 @@ CameraModel::CameraModel(bool sessionOnly, QObject *parent)
         const QString path = output::uniqueMediaPath(m_photosDir, QStringLiteral("IMG"),
                                                      QStringLiteral("jpg"), QDateTime::currentDateTime(),
                                                      [](const QString &candidate) {
-                                                         return QFileInfo::exists(candidate);
+                                                         return output::pathTaken(candidate);
                                                      });
 
         auto *watcher = new QFutureWatcher<bool>(this);
@@ -138,9 +139,16 @@ CameraModel::CameraModel(bool sessionOnly, QObject *parent)
             }
         });
         watcher->setFuture(QtConcurrent::run([preview, path] {
-            QImageWriter writer(path, QByteArrayLiteral("jpeg"));
+            QSaveFile file(path);
+            if (!file.open(QIODevice::WriteOnly))
+                return false;
+            QImageWriter writer(&file, QByteArrayLiteral("jpeg"));
             writer.setQuality(92);
-            return writer.write(preview);
+            if (!writer.write(preview)) {
+                file.cancelWriting();
+                return false;
+            }
+            return file.commit();
         }));
     });
     connect(m_imageCapture, &QImageCapture::errorOccurred, this,
@@ -302,20 +310,20 @@ void CameraModel::cycleTimer()
 
 void CameraModel::setPhotosDir(const QString &dir)
 {
-    const QString trimmed = dir.trimmed();
-    if (trimmed.isEmpty() || trimmed == m_photosDir)
+    const QString sanitized = output::sanitizedPath(dir);
+    if (sanitized.isEmpty() || sanitized == m_photosDir)
         return;
-    m_photosDir = trimmed;
+    m_photosDir = sanitized;
     emit photosDirChanged();
     saveSettings();
 }
 
 void CameraModel::setVideosDir(const QString &dir)
 {
-    const QString trimmed = dir.trimmed();
-    if (trimmed.isEmpty() || trimmed == m_videosDir)
+    const QString sanitized = output::sanitizedPath(dir);
+    if (sanitized.isEmpty() || sanitized == m_videosDir)
         return;
-    m_videosDir = trimmed;
+    m_videosDir = sanitized;
     emit videosDirChanged();
     saveSettings();
 }
@@ -478,10 +486,21 @@ void CameraModel::startRecording()
     m_recordFinalPath = output::uniqueMediaPath(m_videosDir, QStringLiteral("VID"), m_recordingExtension,
                                                 QDateTime::currentDateTime(),
                                                 [](const QString &candidate) {
-                                                    return QFileInfo::exists(candidate)
-                                                        || QFileInfo::exists(candidate + QStringLiteral(".part"));
+                                                    return output::pathTaken(candidate)
+                                                        || output::pathTaken(candidate + QStringLiteral(".part"));
                                                 });
     m_recordPartPath = output::partPathFor(m_recordFinalPath);
+
+    QFile partFile(m_recordPartPath);
+    if (!partFile.open(QIODevice::WriteOnly | QIODevice::NewOnly)) {
+        const QString text = QStringLiteral("Could not create the recording file");
+        emit videoFailed(text);
+        emit message(text, true);
+        m_recordPartPath.clear();
+        m_recordFinalPath.clear();
+        return;
+    }
+    partFile.close();
 
     m_session.setAudioInput((m_micEnabled && m_micAvailable) ? m_audioInput : nullptr);
     m_recorder->setOutputLocation(QUrl::fromLocalFile(m_recordPartPath));

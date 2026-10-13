@@ -86,6 +86,24 @@ bool isPartPath(const QString &path)
     return path.endsWith(QStringLiteral(".part"));
 }
 
+bool pathTaken(const QString &path)
+{
+    const QFileInfo info(path);
+    return info.exists() || info.isSymLink();
+}
+
+QString sanitizedPath(const QString &path)
+{
+    QString result;
+    result.reserve(path.size());
+    for (const QChar &ch : path) {
+        if (ch.unicode() < 0x20 || ch.unicode() == 0x7f)
+            continue;
+        result.append(ch);
+    }
+    return result.trimmed();
+}
+
 bool ensureDir(const QString &path, QString *error)
 {
     if (QDir().mkpath(path))

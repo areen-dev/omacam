@@ -1,0 +1,71 @@
+/home/areen/Work/omarchy-camera/packaging/dev.areen.omacam.desktop: hint: value item "Photography" in key "Categories" in group "Desktop Entry" can be extended with another category among the following categories: Graphics, or Office
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/areen/Work/omarchy-camera/target
+[1/49] Automatic MOC and UIC for target camera-core
+[2/49] Running AUTOMOC file extraction for target camera-core
+[3/48] Building CXX object CMakeFiles/camera-core.dir/camera-core_autogen/mocs_compilation.cpp.o
+[4/48] Building CXX object CMakeFiles/camera-core.dir/src/camera/CatalogFormat.cpp.o
+[5/48] Building CXX object CMakeFiles/camera-core.dir/src/config/SettingsStore.cpp.o
+[6/48] Building CXX object CMakeFiles/camera-core.dir/src/theme/ThemeParser.cpp.o
+[7/48] Building CXX object CMakeFiles/camera-core.dir/src/config/OutputPaths.cpp.o
+[8/48] Linking CXX static library libcamera-core.a
+[9/48] Automatic MOC and UIC for target tst_catalog
+[10/48] Automatic MOC and UIC for target tst_theme_parser
+[11/48] Automatic MOC and UIC for target dev.areen.omacam
+[12/48] Running AUTOMOC file extraction for target dev.areen.omacam
+[13/41] Building CXX object CMakeFiles/tst_catalog.dir/tst_catalog_autogen/mocs_compilation.cpp.o
+[14/41] Building CXX object CMakeFiles/tst_theme_parser.dir/tst_theme_parser_autogen/mocs_compilation.cpp.o
+[15/41] Automatic MOC and UIC for target tst_settings
+[16/41] Automatic MOC and UIC for target tst_output_paths
+[17/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.qt/rcc/qrc_qmake_dev_areen_omacam.cpp.o
+[18/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_qmltyperegistrations.cpp.o
+[19/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/theme/ThemePalette.cpp.o
+[20/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_autogen/mocs_compilation.cpp.o
+[21/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_qmlcache_loader.cpp.o
+[22/41] Building CXX object CMakeFiles/tst_theme_parser.dir/tests/tst_theme_parser.cpp.o
+[23/41] Building CXX object CMakeFiles/tst_catalog.dir/tests/tst_catalog.cpp.o
+[24/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.qt/rcc/qrc_dev_areen_omacam_raw_qml_0.cpp.o
+[25/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/main.cpp.o
+[26/41] Building CXX object CMakeFiles/tst_settings.dir/tst_settings_autogen/mocs_compilation.cpp.o
+[27/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.qt/rcc/qrc_dev_areen_omacam_raw_qml_0_extra_qmldirs.cpp.o
+[28/41] Building CXX object CMakeFiles/tst_output_paths.dir/tst_output_paths_autogen/mocs_compilation.cpp.o
+[29/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp.o
+[30/41] Linking CXX executable tst_catalog
+[31/41] Linking CXX executable tst_theme_parser
+[32/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.o
+[33/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.o
+[34/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/camera/CameraModel.cpp.o
+[35/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.o
+[36/41] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.o
+[37/41] Linking CXX executable dev.areen.omacam
+[38/41] Building CXX object CMakeFiles/tst_settings.dir/tests/tst_settings.cpp.o
+[39/41] Linking CXX executable tst_settings
+[40/41] Building CXX object CMakeFiles/tst_output_paths.dir/tests/tst_output_paths.cpp.o
+[41/41] Linking CXX executable tst_output_paths
+Test project /home/areen/Work/omarchy-camera/target
+    Start 1: tst_catalog
+1/4 Test #1: tst_catalog ......................   Passed    0.00 sec
+    Start 2: tst_settings
+2/4 Test #2: tst_settings .....................   Passed    0.01 sec
+    Start 3: tst_output_paths
+3/4 Test #3: tst_output_paths .................   Passed    0.01 sec
+    Start 4: tst_theme_parser
+4/4 Test #4: tst_theme_parser .................   Passed    0.00 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   0.02 sec
+-- Install configuration: "Release"
+-- Installing: /home/areen/.local/bin/dev.areen.omacam
+-- Set non-toolchain portion of runtime path of "/home/areen/.local/bin/dev.areen.omacam" to "$ORIGIN:$ORIGIN/../lib"
+-- Up-to-date: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+-- Up-to-date: /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+
+Installed dev.areen.omacam
+  binary:  /home/areen/.local/bin/dev.areen.omacam
+  desktop: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+  icon:    /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+Uninstall with: ./install.sh --uninstall

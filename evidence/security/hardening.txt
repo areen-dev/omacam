@@ -1,0 +1,22 @@
+Binary hardening verification (2026-10-14)
+
+PIE:
+  Type:                              DYN (Position-Independent Executable file)
+
+RELRO and stack:
+  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x10
+  GNU_RELRO      0x081448 0x0000000000082448 0x0000000000082448 0x003bb8 0x003bb8 R   0x1
+
+BIND_NOW:
+ 0x000000000000001e (FLAGS)              BIND_NOW
+ 0x000000006ffffffb (FLAGS_1)            Flags: NOW PIE
+
+Stack protector symbol:
+1
+Fortify symbols:
+__memcpy_chk
+__memset_chk
+__stack_chk
+
+CET properties:
+  GNU                  0x00000050	NT_GNU_PROPERTY_TYPE_0	      Properties: 1_needed: indirect external access, x86 feature: IBT, SHSTK, x86 ISA needed: x86-64-baseline, x86 feature used: x86, XMM, x86 ISA used: x86-64-baseline

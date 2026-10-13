@@ -16,6 +16,8 @@ QString uniqueMediaPath(const QString &dir, const QString &prefix, const QString
 QString partPathFor(const QString &finalPath);
 QString finalPathFor(const QString &partPath);
 bool isPartPath(const QString &path);
+bool pathTaken(const QString &path);
+QString sanitizedPath(const QString &path);
 bool ensureDir(const QString &path, QString *error = nullptr);
 
 } // namespace output

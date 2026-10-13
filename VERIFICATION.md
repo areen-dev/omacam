@@ -186,9 +186,24 @@ traces; the other GUI checks used the installed binary. This session is
 a single 2560x1600 monitor at scale 2, so every GUI run here is a HiDPI run
 (`acceptance-3/display.txt`); multi-monitor placement is not applicable on
 this machine. Privileged steps (package lifecycle, USB unbind/rebind) were
-run via `pkexec`. Still not run: demo media. Packaging: an omarchy-pkgs
+run via `pkexec`. Remaining items: demo media. Packaging: an omarchy-pkgs
 contribution is open as `omacom/omarchy-pkgs` PR #1031, awaiting maintainer
 build approval; no AUR submission (dropped by the maintainer).
+
+## Security hardening pass (2026-10-14)
+
+Adversarial review with a local-attacker threat model; full findings in
+[SECURITY.md](SECURITY.md). Logs: `evidence/security/`.
+
+| Check | Result |
+| --- | --- |
+| Symlink attack against 0.1.2 | broken symlinks planted in the output folders were followed: the JPEG and MP4 landed in `/tmp` targets while the app reported success (`security/symlink-poc-before.log`) |
+| Same attack after the fix | targets untouched; media saved under collision-suffixed, symlink-free names (`security/symlink-poc-after.log`) |
+| Unit tests including the new security cases | 4/4 pass (`security/ctest.log`) |
+| Settings robustness | oversized files rejected, non-finite numbers treated as strings, control characters stripped (`tst_settings`, `tst_output_paths`) |
+| Binary hardening | PIE, full RELRO, BIND_NOW, stack protector, FORTIFY_SOURCE=3, CET (IBT/SHSTK) (`security/hardening.txt`) |
+| Regressions | self-test, fail-fast recording error, quit-during-record finalization (`security/selftest-1280x720.log`, `record-fail.log`, `quit-during-record.log`) |
+| GitHub security features | private vulnerability reporting, Dependabot alerts and automated security fixes enabled; Dependabot and CodeQL workflows added |
 
 ## Historical
 

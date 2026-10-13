@@ -1,0 +1,8 @@
+Display session (2026-10-13)
+
+hyprctl monitors: a single eDP-1, 2560x1600, scale 2.
+
+All GUI evidence in this repository was captured in this scale-2 session
+(1280x800 logical), so the HiDPI path is exercised by every ui-check and
+acceptance run. Multi-monitor placement is not applicable on this machine
+(single monitor).

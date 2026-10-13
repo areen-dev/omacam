@@ -1,0 +1,8 @@
+Launcher icon rendering (2026-10-13)
+
+Method: `omarchy menu toggle` opened the Omarchy menu; "omacam" was typed
+into its search with wtype; the screen was captured with grim and inspected.
+The menu showed the entry "Omacam / Apps" with the camera icon rendered from
+`packaging/dev.areen.omacam.svg`. The menu was closed and the screenshots
+were deleted (they contained unrelated desktop content); this note records
+the observation.

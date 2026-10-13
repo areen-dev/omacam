@@ -38,6 +38,10 @@ backend), C++20, CMake + Ninja. Identity: `dev.areen.omacam`, name `Omacam`.
 - Live checks: `--self-test <dir> --format <WxH>`, `--cycle-timer`,
   `--quit-during-record`, `--record-during-timer`, `--ui-check <seconds>`,
   `--rescan-every <seconds>`, `--tab-check <steps>` (see README).
+- Package recipe: `packaging/PKGBUILD` (source is the GitHub tag archive with
+  a pinned digest). Build from a scratch copy with
+  `mise exec cmake@latest ninja@latest -- makepkg -fd`; the pacman install
+  lifecycle is not run on this machine.
 - Install: `./install.sh` (upgrade-safe); launcher check with `gtk-launch` and
   `hyprctl clients`.
 - Record evidence under `evidence/<stage>/`, update `VERIFICATION.md`, then

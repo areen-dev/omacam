@@ -1,0 +1,130 @@
+==> Making package: omacam 0.1.2-1 (Tue 13 Oct 2026 11:28:45 PM IST)
+==> WARNING: Skipping dependency checks.
+==> Retrieving sources...
+  -> Downloading omacam-0.1.2.tar.gz...
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0
+  0      0   0      0   0      0      0      0                              0100  89575   0  89575   0      0 122.9k      0                              0100  89575   0  89575   0      0 122.9k      0                              0100  89575   0  89575   0      0 122.9k      0                              0
+==> Validating source files with sha256sums...
+    omacam-0.1.2.tar.gz ... Passed
+==> Extracting sources...
+  -> Extracting omacam-0.1.2.tar.gz with bsdtar
+==> Starting build()...
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+-- Found OpenGL: /usr/lib/libOpenGL.so
+-- Found WrapOpenGL: TRUE
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/opencode/pkgbuild/src/build
+[1/57] Copying dev.areen.omacam qml resources into build dir
+[2/57] Copying dev.areen.omacam qml sources into build dir
+[3/57] Populating .qmlls.ini file at /tmp/opencode/pkgbuild/src/build/.qt/.qmlls.build.ini
+[4/57] Automatic MOC and UIC for target camera-core
+[5/57] Running AUTOMOC file extraction for target camera-core
+[6/57] Running moc --collect-json for target camera-core
+[7/57] Running qmlimportscanner for dev.areen.omacam
+[8/57] Building CXX object CMakeFiles/camera-core.dir/camera-core_autogen/mocs_compilation.cpp.o
+[9/57] Building CXX object CMakeFiles/camera-core.dir/src/camera/CatalogFormat.cpp.o
+[10/57] Building CXX object CMakeFiles/camera-core.dir/src/config/SettingsStore.cpp.o
+[11/57] Building CXX object CMakeFiles/camera-core.dir/src/config/OutputPaths.cpp.o
+[12/57] Building CXX object CMakeFiles/camera-core.dir/src/theme/ThemeParser.cpp.o
+[13/57] Linking CXX static library libcamera-core.a
+[14/57] Automatic MOC and UIC for target dev.areen.omacam
+[15/57] Running AUTOMOC file extraction for target dev.areen.omacam
+[16/57] Running moc --collect-json for target dev.areen.omacam
+[17/57] Running rcc for resource qmake_dev_areen_omacam
+[18/57] Generating .rcc/qmlcache/dev.areen.omacam_qmlcache_loader.cpp
+[19/57] Running rcc for resource dev_areen_omacam_raw_qml_0_extra_qmldirs
+[20/57] Automatic MOC and UIC for target tst_theme_parser
+[21/57] Running rcc for resource dev_areen_omacam_raw_qml_0
+[22/57] Building CXX object CMakeFiles/tst_theme_parser.dir/tst_theme_parser_autogen/mocs_compilation.cpp.o
+[23/57] Automatic QML type registration for target dev.areen.omacam
+[24/57] Automatic MOC and UIC for target tst_settings
+[25/57] Automatic MOC and UIC for target tst_output_paths
+[26/57] Building CXX object CMakeFiles/tst_settings.dir/tst_settings_autogen/mocs_compilation.cpp.o
+[27/57] Automatic MOC and UIC for target tst_catalog
+[28/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.aotstats
+[29/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.aotstats
+[30/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.aotstats
+[31/57] Building CXX object CMakeFiles/tst_catalog.dir/tst_catalog_autogen/mocs_compilation.cpp.o
+[32/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.aotstats
+[33/57] Building CXX object CMakeFiles/tst_output_paths.dir/tst_output_paths_autogen/mocs_compilation.cpp.o
+[34/57] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp.aotstats
+[35/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_autogen/mocs_compilation.cpp.o
+[36/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/theme/ThemePalette.cpp.o
+[37/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.qt/rcc/qrc_qmake_dev_areen_omacam.cpp.o
+[38/57] Building CXX object CMakeFiles/tst_output_paths.dir/tests/tst_output_paths.cpp.o
+[39/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/camera/CameraModel.cpp.o
+[40/57] Building CXX object CMakeFiles/tst_catalog.dir/tests/tst_catalog.cpp.o
+[41/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/main.cpp.o
+[42/57] Building CXX object CMakeFiles/tst_theme_parser.dir/tests/tst_theme_parser.cpp.o
+[43/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_qmltyperegistrations.cpp.o
+[44/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.qt/rcc/qrc_dev_areen_omacam_raw_qml_0.cpp.o
+[45/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.qt/rcc/qrc_dev_areen_omacam_raw_qml_0_extra_qmldirs.cpp.o
+[46/57] Building CXX object CMakeFiles/tst_settings.dir/tests/tst_settings.cpp.o
+[47/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_qmlcache_loader.cpp.o
+[48/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_Main_qml.cpp.o
+[49/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.o
+[50/57] Linking CXX executable tst_theme_parser
+[51/57] Linking CXX executable tst_output_paths
+[52/57] Linking CXX executable tst_settings
+[53/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.o
+[54/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.o
+[55/57] Linking CXX executable tst_catalog
+[56/57] Building CXX object CMakeFiles/dev.areen.omacam.dir/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.o
+[57/57] Linking CXX executable dev.areen.omacam
+==> Starting check()...
+Test project /tmp/opencode/pkgbuild/src/build
+    Start 1: tst_catalog
+1/4 Test #1: tst_catalog ......................   Passed    0.01 sec
+    Start 2: tst_settings
+2/4 Test #2: tst_settings .....................   Passed    0.01 sec
+    Start 3: tst_output_paths
+3/4 Test #3: tst_output_paths .................   Passed    0.01 sec
+    Start 4: tst_theme_parser
+4/4 Test #4: tst_theme_parser .................   Passed    0.00 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   0.02 sec
+==> Entering fakeroot environment...
+==> Starting package()...
+-- Install configuration: "Release"
+-- Installing: /tmp/opencode/pkgbuild/pkg/omacam/usr/bin/dev.areen.omacam
+-- Set non-toolchain portion of runtime path of "/tmp/opencode/pkgbuild/pkg/omacam/usr/bin/dev.areen.omacam" to "$ORIGIN:$ORIGIN/../lib"
+-- Installing: /tmp/opencode/pkgbuild/pkg/omacam/usr/share/applications/dev.areen.omacam.desktop
+-- Installing: /tmp/opencode/pkgbuild/pkg/omacam/usr/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+==> Tidying install...
+  -> Removing libtool files...
+  -> Purging unreproducible ruby files...
+  -> Removing static library files...
+  -> Purging unwanted files...
+  -> Stripping unneeded symbols from binaries and libraries...
+  -> Compressing man and info pages...
+==> Checking for packaging issues...
+==> Creating package "omacam"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Creating package "omacam-debug"...
+  -> Generating .PKGINFO file...
+  -> Generating .BUILDINFO file...
+  -> Generating .MTREE file...
+  -> Compressing package...
+==> Leaving fakeroot environment.
+==> Finished making: omacam 0.1.2-1 (Tue 13 Oct 2026 11:29:01 PM IST)

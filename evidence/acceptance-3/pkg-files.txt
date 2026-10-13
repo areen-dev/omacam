@@ -1,0 +1,11 @@
+omacam /usr/
+omacam /usr/bin/
+omacam /usr/bin/dev.areen.omacam
+omacam /usr/share/
+omacam /usr/share/applications/
+omacam /usr/share/applications/dev.areen.omacam.desktop
+omacam /usr/share/icons/
+omacam /usr/share/icons/hicolor/
+omacam /usr/share/icons/hicolor/scalable/
+omacam /usr/share/icons/hicolor/scalable/apps/
+omacam /usr/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg

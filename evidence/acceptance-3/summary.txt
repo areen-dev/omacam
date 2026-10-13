@@ -1,0 +1,38 @@
+Live acceptance pass 2 (2026-10-13)
+
+Icon rendering: the Omarchy menu lists "Omacam / Apps" with its camera icon
+(see icon-menu.txt; screenshots discarded for privacy).
+
+Theme switching: while the app was open, `omarchy theme set Catppuccin` and
+`omarchy theme set Aether` each reloaded the palette live (5 palette loads:
+initial, two around each switch, including the Catppuccin colors
+#1e1e2e/#89b4fa). The user's theme was restored to aether.
+Logs: theme-switch.log, theme-set-1.txt, theme-set-2.txt.
+
+Folder open: with the renamed build focused, `wtype p` opened the file
+manager on the photos folder (class=org.gnome.Nautilus, title=p-photos);
+the window was closed afterwards. Logs: folder-open.log, folder-window.txt.
+
+Keyboard editing and paste: with the settings panel open, 16 real Tab
+presses reached the photos field; typing and Return saved the value, and
+Ctrl+A selected the whole text. Ctrl+V pasted the clipboard content when
+sent as an explicit press/release (`wtype -M ctrl -P v -p v -m ctrl`); the
+saved config then contained the clipboard path appended to the old value.
+Logs: paste.log, keyboard-edit.log.
+Note: the live tab chain needs 16 presses (one more than the synthetic
+`--tab-check` trace); the field is reached reliably at 16.
+
+Package build: `packaging/PKGBUILD` builds `omacam 0.1.2-1` from the
+v0.1.2 tag archive (sha256 pinned). The package contains
+`/usr/bin/dev.areen.omacam` (0755), the desktop entry and the icon (0644),
+no install script, no home-directory files: 177.94 KiB compressed,
+495.48 KiB installed. Unsigned; pacman install/upgrade/removal and namcap
+were not run (no root and namcap is not installed).
+Logs: pkg-build.log, pkg-info.txt, pkg-files.txt.
+
+Display context: single eDP-1 at 2560x1600 scale 2; see display.txt. Every
+GUI run in this repository is therefore a HiDPI run; multi-monitor
+placement is not applicable on this machine.
+
+Still not run: camera-disconnect during streaming (needs a physical
+unplug); pacman install lifecycle and namcap for the package.

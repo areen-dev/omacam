@@ -170,12 +170,19 @@ interaction checks for items 7-9 in a later pass.
 | Corrupt settings | original preserved as `camera.conf.corrupt-*`, defaults rewritten, exit 0 (`corruption.log`) |
 | Newer schema | config kept byte-identical (read-only), exit 0 (`newer-schema.log`) |
 | Unwritable settings directory | app ran, config kept byte-identical, exit 0 (`readonly-config.log`) |
+| Launcher icon | the Omarchy menu lists "Omacam / Apps" with its camera icon (`acceptance-3/icon-menu.txt`; screenshots discarded for privacy) |
+| Full theme switch | `omarchy theme set Catppuccin` and back to `Aether` while open: 5 live palette loads, theme restored (`acceptance-3/theme-switch.log`, `theme-set-1.txt`, `theme-set-2.txt`) |
+| Folder open | with the renamed build focused, `p` opened the file manager on the photos folder (`acceptance-3/folder-open.log`, `folder-window.txt`) |
+| Keyboard edit and paste | 16 real Tab presses reach the photos field; typing and Return save, Ctrl+A selects, Ctrl+V pastes the clipboard value (`acceptance-3/paste.log`, `keyboard-edit.log`) |
+| Package recipe | `packaging/PKGBUILD` builds `omacam 0.1.2-1` from the pinned tag archive; binary, desktop entry and icon files and modes verified; unsigned (`acceptance-3/pkg-build.log`, `pkg-info.txt`, `pkg-files.txt`) |
 
 The recording-control check used the instrumented build with `--tab-check`
-traces; the remaining checks used the installed v0.1.2 binary. Still not run:
-icon rendering, a full `omarchy theme set` switch, multi-monitor placement,
-HiDPI scaling, IME/paste, camera-disconnect during streaming and the "open
-photos/videos folder" behavior on the renamed build.
+traces; the other GUI checks used the installed v0.1.2 binary. This session is
+a single 2560x1600 monitor at scale 2, so every GUI run here is a HiDPI run
+(`acceptance-3/display.txt`); multi-monitor placement is not applicable on
+this machine. Still not run: camera-disconnect during streaming (needs a
+physical unplug), and the pacman install/upgrade/removal lifecycle and namcap
+for the package.
 
 ## Historical
 

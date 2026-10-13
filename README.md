@@ -12,9 +12,10 @@ local install/uninstall reproduced on Omarchy 4.0.4-1 (see
 with the expected Wayland app_id, and preview frame delivery is checked by the
 automated `--ui-check` mode. The audit defects are fixed and verified on
 2026-10-13 across three fix passes; [known issues](KNOWN-ISSUES.md) lists the
-one remaining low-severity item. Icon rendering, a full live
-`omarchy theme set` switch and a README screenshot remain pending (the
-screenshot was deliberately omitted for privacy).
+one remaining low-severity item. The launcher entry and icon render in the
+Omarchy menu, the palette follows a full `omarchy theme set` switch, and a
+package recipe builds; a README screenshot was deliberately omitted for
+privacy.
 Version 0.1.2 has one open low-severity item; review
 [known issues](KNOWN-ISSUES.md) before you publish or deploy this app.
 Intended Omarchy target: 4 / Hyprland; this is the intended target, not a tested
@@ -104,6 +105,9 @@ Kept on uninstall: `~/.config/dev.areen.omacam/camera.conf`,
   [verification](VERIFICATION.md)).
 - This webcam advertises 30 fps but delivers about 20 fps; the UI shows both the
   requested format and a measured fps readout.
+- Frame-rate choices are the camera's reported minimum and maximum plus
+  standard rates inside that range; cameras that quantize internally snap to
+  the nearest supported rate, because Qt exposes only frame-rate ranges.
 - Folder paths are edited as text; there is no portal folder picker yet.
 - The Qt Multimedia FFmpeg backend reports GPL licensing; see [credits](CREDITS.md).
 

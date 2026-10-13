@@ -3,10 +3,11 @@
 Status of this list: defects found by a code and live-test audit on 2026-09-21
 and re-checked during the final verification on 2026-10-13. Items 1-4 were
 fixed and re-verified in the first fix pass; items 5-9, 11, 12, 15 and 17 were
-fixed in a second pass; items 10, 13 and 16 were fixed in a third pass. Item 14
-remains open. Evidence: first pass under `evidence/fix/`, second pass under
-`evidence/fix2/`, third pass under `evidence/fix3/`, audit files under
-`evidence/known-issues/`.
+fixed in a second pass; items 10, 13 and 16 were fixed in a third pass; item 14
+was closed as documented (no code change possible). Evidence: first pass under
+`evidence/fix/`, second pass under `evidence/fix2/`, third pass under
+`evidence/fix3/`, live acceptance under `evidence/acceptance-2/` and
+`evidence/acceptance-3/`, audit files under `evidence/known-issues/`.
 
 ## High (fixed 2026-10-13)
 
@@ -83,8 +84,12 @@ remains open. Evidence: first pass under `evidence/fix/`, second pass under
     (two palette loads after the directory appears).
     See `evidence/fix3/theme-timeout.log` and
     `evidence/fix3/theme-late-dir.log`.
-14. The frame-rate list can offer standard rates inside a device range that
-    the device does not support discretely.
+14. **Closed as documented: the frame-rate list can offer standard rates
+    inside a device range.** The list already includes the exact reported
+    minimum and maximum plus standard rates within the range, and Qt exposes
+    only ranges, so discrete-capability detection is not possible; cameras
+    that quantize internally snap to the nearest supported rate. See the
+    README limitations.
 15. **Fixed: output file naming stops checking after 1000 attempts.** After
     the sequential attempts a randomized suffix keeps checking; the new unit
     test `avoidsCollisionCap` covers the fallback (`evidence/fix2/ctest.log`).

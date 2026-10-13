@@ -13,7 +13,7 @@ backend), C++20, CMake + Ninja. Identity: `dev.areen.omacam`, name `Omacam`.
   `mise exec cmake@latest ninja@latest -- cmake ...` (install.sh the same way).
   To install properly: `omarchy pkg add cmake ninja`.
 - Scaffold/evidence tool:
-  `mise exec rust@latest -- cargo run --manifest-path /home/areen/.config/opencode/skills/omarchy-app-scaffold/scripts/app-tool/Cargo.toml -- check|snapshot|verify <dir>`.
+  `mise exec rust@latest -- cargo run --manifest-path ~/.config/opencode/skills/omarchy-app-scaffold/scripts/app-tool/Cargo.toml -- check|snapshot|verify <dir>`.
   `verify` fails when evidence changed but `EVIDENCE.sha256` was not
   regenerated — snapshot again after collecting evidence.
 - Qt logs reach stderr only with `QT_FORCE_STDERR_LOGGING=1` (agent shells run

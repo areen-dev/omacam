@@ -49,7 +49,7 @@ Item {
         width: statusRow.implicitWidth + 20
         radius: 8
         color: Qt.rgba(0, 0, 0, 0.55)
-        visible: CameraModel.hasCamera
+        visible: CameraModel.hasCamera && CameraModel.activeFormatLabel.length > 0
 
         Row {
             id: statusRow
@@ -237,10 +237,16 @@ Item {
                 radius: 24
                 color: shutterMouse.containsMouse && shutterEnabled ? Theme.accent : Theme.foreground
                 border.width: 3
-                border.color: "#000000"
+                border.color: activeFocus ? Theme.accent : "#000000"
                 opacity: shutterEnabled ? 1.0 : 0.45
+                activeFocusOnTab: true
+                Accessible.role: Accessible.Button
+                Accessible.name: "Take photo"
 
                 readonly property bool shutterEnabled: CameraModel.imageCaptureReady && !CameraModel.recording
+
+                Keys.onReturnPressed: if (shutterEnabled) CameraModel.takePhoto()
+                Keys.onEnterPressed: if (shutterEnabled) CameraModel.takePhoto()
 
                 MouseArea {
                     id: shutterMouse

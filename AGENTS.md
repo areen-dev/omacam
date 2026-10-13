@@ -37,7 +37,7 @@ backend), C++20, CMake + Ninja. Identity: `dev.areen.omacam`, name `Omacam`.
   `desktop-file-validate packaging/dev.areen.omacam.desktop`.
 - Live checks: `--self-test <dir> --format <WxH>`, `--cycle-timer`,
   `--quit-during-record`, `--record-during-timer`, `--ui-check <seconds>`,
-  `--rescan-every <seconds>` (see README).
+  `--rescan-every <seconds>`, `--tab-check <steps>` (see README).
 - Install: `./install.sh` (upgrade-safe); launcher check with `gtk-launch` and
   `hyprctl clients`.
 - Record evidence under `evidence/<stage>/`, update `VERIFICATION.md`, then

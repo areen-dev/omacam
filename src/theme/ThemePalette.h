@@ -51,6 +51,7 @@ private:
     QProcess m_process;
     QFileSystemWatcher m_watcher;
     QTimer m_debounce;
+    QTimer m_processTimeout;
     QColor m_background;
     QColor m_foreground;
     QColor m_surface;

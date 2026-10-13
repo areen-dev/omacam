@@ -1,0 +1,3 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+UICHECK measuredFps=20 state=Streaming settingsVisible=false errorBanner=false focus=QQuickRootItem format=1920x1080 · MJPEG · 30 fps

@@ -1,0 +1,56 @@
+/home/areen/Work/omarchy-camera/packaging/dev.areen.omacam.desktop: hint: value item "Photography" in key "Categories" in group "Desktop Entry" can be extended with another category among the following categories: Graphics, or Office
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/areen/Work/omarchy-camera/target
+[1/41] Copying dev.areen.omacam qml sources into build dir
+[2/41] Automatic MOC and UIC for target camera-core
+[3/39] Running AUTOMOC file extraction for target camera-core
+[4/38] Automatic MOC and UIC for target tst_output_paths
+[5/36] Automatic MOC and UIC for target tst_catalog
+[6/34] Automatic MOC and UIC for target tst_settings
+[7/32] Automatic MOC and UIC for target tst_theme_parser
+[8/30] Running qmlimportscanner for dev.areen.omacam
+[9/30] Automatic MOC and UIC for target dev.areen.omacam
+[10/30] Running AUTOMOC file extraction for target dev.areen.omacam
+[11/30] Running moc --collect-json for target dev.areen.omacam
+[12/26] Running rcc for resource dev_areen_omacam_raw_qml_0
+[13/26] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.aotstats
+[14/26] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.aotstats
+[15/26] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.aotstats
+[16/26] Generating .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp, .rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.aotstats
+[17/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingCombo_qml.cpp.o
+[18/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_AppButton_qml.cpp.o
+[19/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.qt/rcc/qrc_dev_areen_omacam_raw_qml_0.cpp.o
+[20/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/theme/ThemePalette.cpp.o
+[21/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_SettingsPanel_qml.cpp.o
+[22/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/dev.areen.omacam_autogen/mocs_compilation.cpp.o
+[23/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/target/.rcc/qmlcache/dev.areen.omacam_src_qml_PreviewPane_qml.cpp.o
+[24/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/main.cpp.o
+[25/26] Building CXX object CMakeFiles/dev.areen.omacam.dir/src/camera/CameraModel.cpp.o
+[26/26] Linking CXX executable dev.areen.omacam
+Test project /home/areen/Work/omarchy-camera/target
+    Start 1: tst_catalog
+1/4 Test #1: tst_catalog ......................   Passed    0.00 sec
+    Start 2: tst_settings
+2/4 Test #2: tst_settings .....................   Passed    0.01 sec
+    Start 3: tst_output_paths
+3/4 Test #3: tst_output_paths .................   Passed    0.01 sec
+    Start 4: tst_theme_parser
+4/4 Test #4: tst_theme_parser .................   Passed    0.00 sec
+
+100% tests passed out of 4
+
+Total Test time (real) =   0.02 sec
+-- Install configuration: "Release"
+-- Installing: /home/areen/.local/bin/dev.areen.omacam
+-- Set non-toolchain portion of runtime path of "/home/areen/.local/bin/dev.areen.omacam" to "$ORIGIN:$ORIGIN/../lib"
+-- Up-to-date: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+-- Up-to-date: /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+
+Installed dev.areen.omacam
+  binary:  /home/areen/.local/bin/dev.areen.omacam
+  desktop: /home/areen/.local/share/applications/dev.areen.omacam.desktop
+  icon:    /home/areen/.local/share/icons/hicolor/scalable/apps/dev.areen.omacam.svg
+Uninstall with: ./install.sh --uninstall

@@ -612,6 +612,10 @@ void CameraModel::setState(State state)
         return;
     m_state = state;
     emit stateChanged();
+    if ((state == State::Error || state == State::NoCamera) && !m_activeFormatLabel.isEmpty()) {
+        m_activeFormatLabel.clear();
+        emit activeFormatChanged();
+    }
 }
 
 void CameraModel::setErrorText(const QString &text)
@@ -653,6 +657,7 @@ void CameraModel::rebuildDevices(bool initial)
         emit deviceChanged();
         m_catalog.clear();
         rebuildFormats();
+        applySelection(QSize(), QString(), 0.0, false);
         setState(State::NoCamera);
         return;
     }
@@ -823,13 +828,17 @@ void CameraModel::applyCameraFormat()
 
 void CameraModel::updateActiveFormatLabel()
 {
-    const QCameraFormat active = m_camera->cameraFormat();
     QString label;
-    if (active.resolution().isValid()) {
-        label = catalog::formatLabel(active.resolution(), pixelFormatLabel(static_cast<int>(active.pixelFormat())),
-                                     std::max(active.minFrameRate(), active.maxFrameRate()));
-    } else if (!m_resolution.isEmpty()) {
-        label = catalog::formatLabel(parseResolution(m_resolution), m_pixelFormat, m_frameRate);
+    if (!hasCamera() || m_state == State::Error) {
+        label.clear();
+    } else {
+        const QCameraFormat active = m_camera->cameraFormat();
+        if (active.resolution().isValid()) {
+            label = catalog::formatLabel(active.resolution(), pixelFormatLabel(static_cast<int>(active.pixelFormat())),
+                                         std::max(active.minFrameRate(), active.maxFrameRate()));
+        } else if (!m_resolution.isEmpty()) {
+            label = catalog::formatLabel(parseResolution(m_resolution), m_pixelFormat, m_frameRate);
+        }
     }
 
     if (label == m_activeFormatLabel)

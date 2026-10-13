@@ -140,6 +140,26 @@ The device-combo resync, timer-combo resync, control disablement and folder
 open failure paths are covered by inspection and lint; live interaction checks
 were not run because the controls are not keyboard-reachable (item 16).
 
+## Third fix verification run (2026-10-13)
+
+Items 10, 13 and 16 were fixed and re-verified in a third pass. Logs:
+`evidence/fix3/`.
+
+| Check | Result |
+| --- | --- |
+| Unit tests | 4/4 pass (`ctest.log`) |
+| QML lint | exit 0, unqualified-access warnings only (`qmllint.txt`) |
+| Self-test 1280x720 | exit 0, photo and video saved (`selftest-1280x720.log`) |
+| Error-state format chip | busy camera: `state=Camera error`, `errorBanner=true`, empty `format=` (exit 3 because no frames are measured, expected) (`ui-check-busy.log`) |
+| Preview and defaults | exit 0, `state=Streaming`, format reported (`ui-check.log`) |
+| Theme helper timeout | helper killed after 5 s (6 heartbeats instead of 12), fallback palette kept, app exits cleanly (`theme-timeout.log`) |
+| Late theme state directory | directory created while the app was open: two palette loads (`theme-late-dir.log`) |
+| Accessibility traversal | synthetic Tab steps 1-6 reach Mirror, shutter, Record, Settings, Photos, Videos; live keys reach the app (`a11y-tab.txt`, `a11y-tab-wide.log`, `tab-steps/`, `a11y-live-keys.log`) |
+
+Items 10, 13 and 16 are closed; item 14 (frame-rate list) remains open and
+needs a product decision. The tab traversal result also unblocks the live
+interaction checks for items 7-9 in a later pass.
+
 ## Historical
 
 The M1 risk spike logs (`evidence/m1/run2.log`, `run3.log`, `run1080.log`) were

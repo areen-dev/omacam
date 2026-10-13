@@ -13,6 +13,9 @@ Rectangle {
     implicitHeight: 34
     radius: 8
     opacity: enabled ? 1.0 : 0.45
+    activeFocusOnTab: enabled
+    Accessible.role: Accessible.Button
+    Accessible.name: root.text
 
     color: {
         if (root.danger && (root.active || mouseArea.containsMouse))
@@ -23,8 +26,8 @@ Rectangle {
             return Qt.lighter(Theme.surfaceAlt, 1.3)
         return root.subtle ? "transparent" : Theme.surfaceAlt
     }
-    border.width: root.subtle ? 1 : 0
-    border.color: Qt.lighter(Theme.surfaceAlt, 1.5)
+    border.width: root.activeFocus ? 2 : (root.subtle ? 1 : 0)
+    border.color: root.activeFocus ? Theme.accent : Qt.lighter(Theme.surfaceAlt, 1.5)
 
     Text {
         id: label
@@ -39,6 +42,12 @@ Rectangle {
         anchors.fill: parent
         hoverEnabled: true
         cursorShape: Qt.PointingHandCursor
-        onClicked: root.clicked()
+        onClicked: {
+            root.clicked()
+            root.forceActiveFocus()
+        }
     }
+
+    Keys.onReturnPressed: root.clicked()
+    Keys.onEnterPressed: root.clicked()
 }

@@ -35,14 +35,23 @@ ThemePalette::ThemePalette(QObject *parent)
     m_success = QColor(QString::fromLatin1(kFallbackSuccess));
 
     connect(&m_process, &QProcess::finished, this, [this](int exitCode, QProcess::ExitStatus status) {
+        m_processTimeout.stop();
         if (exitCode == 0 && status == QProcess::NormalExit)
             applyOutput(QString::fromUtf8(m_process.readAllStandardOutput()));
     });
     connect(&m_process, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
+        m_processTimeout.stop();
         if (error == QProcess::FailedToStart && m_source != QLatin1String("fallback")) {
             m_source = QStringLiteral("fallback");
             emit paletteChanged();
         }
+    });
+
+    m_processTimeout.setSingleShot(true);
+    m_processTimeout.setInterval(5000);
+    connect(&m_processTimeout, &QTimer::timeout, this, [this] {
+        if (m_process.state() != QProcess::NotRunning)
+            m_process.kill();
     });
 
     m_debounce.setSingleShot(true);
@@ -69,6 +78,7 @@ void ThemePalette::queryOmarchy()
     if (m_process.state() != QProcess::NotRunning)
         return;
     m_process.start(QStringLiteral("omarchy-theme-color"), {QStringLiteral("--all")});
+    m_processTimeout.start();
 }
 
 void ThemePalette::applyOutput(const QString &text)
@@ -112,6 +122,19 @@ void ThemePalette::updateWatchPaths()
     for (const QString &path : candidates) {
         if (QFileInfo::exists(path))
             existing.append(path);
+    }
+
+    if (existing.isEmpty()) {
+        QString ancestor = stateDir;
+        while (!ancestor.isEmpty() && !QFileInfo::exists(ancestor)) {
+            const QString parent = QFileInfo(ancestor).absolutePath();
+            if (parent == ancestor)
+                ancestor.clear();
+            else
+                ancestor = parent;
+        }
+        if (!ancestor.isEmpty())
+            existing.append(ancestor);
     }
 
     if (!existing.isEmpty())

@@ -1,0 +1,16 @@
+Accessibility Tab traversal (2026-10-13)
+
+Live key delivery: with the window focused via Hyprland, `wtype s` toggled the
+settings panel (UICHECK settingsVisible=true), so real Wayland keys reach the
+app (see a11y-live-keys.log).
+
+Synthetic Tab traversal (in-process, independent of compositor focus):
+  command: dev.areen.omacam --ui-check 5 --tab-check <steps>
+
+  steps 1-8 on a tiled 625 px wide window (tab-steps/):
+    1 Mirror, 2 shutter, 3 Record, 4 Settings, 5 Mirror, 6 shutter, 7 Record,
+    8 Settings  (the chain wraps over the four visible controls; Photos and
+    Videos are hidden below the 640 px responsive breakpoint)
+
+  steps 6 on a floating 1260 px wide window (a11y-tab-wide.log):
+    focus=AppButton focusText=Videos  (all six controls reachable when visible)

@@ -10,12 +10,12 @@ Status: implemented vertical slice; unit tests, automated camera self-test and
 local install/uninstall reproduced on Omarchy 4.0.4-1 (see
 [verification](VERIFICATION.md)). The app launches through the desktop entry
 with the expected Wayland app_id, and preview frame delivery is checked by the
-automated `--ui-check` mode. The high-severity defects from the first audit
-(recording start, error banner, timer during recording, portal app ID) are
-fixed and verified on 2026-10-13. Icon rendering, a full live
+automated `--ui-check` mode. The audit defects are fixed and verified on
+2026-10-13 across three fix passes; [known issues](KNOWN-ISSUES.md) lists the
+one remaining low-severity item. Icon rendering, a full live
 `omarchy theme set` switch and a README screenshot remain pending (the
 screenshot was deliberately omitted for privacy).
-Version 0.1.1 still has open medium- and low-severity items; review
+Version 0.1.2 has one open low-severity item; review
 [known issues](KNOWN-ISSUES.md) before you publish or deploy this app.
 Intended Omarchy target: 4 / Hyprland; this is the intended target, not a tested
 compatibility range.
@@ -75,7 +75,9 @@ recording while the self-timer counts down and checks that no photo is saved
 during recording). `--ui-check <seconds>` loads the UI and reports measured
 preview fps, camera state, settings visibility, error-banner visibility and the
 active format; `--rescan-every <seconds>` retries camera recovery while the UI
-is open. Self-test and ui-check exit 0 on success and 2 on failure; `--ui-check`
+is open; `--tab-check <steps>` sends that many synthetic Tab presses before the
+`--ui-check` report (accessibility traversal). Self-test and ui-check exit 0 on
+success and 2 on failure; `--ui-check`
 exits 3 when no frames were measured (for example with the camera busy). The
 self-test does not write the settings file.
 

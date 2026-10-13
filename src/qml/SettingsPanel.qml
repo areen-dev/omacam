@@ -170,6 +170,7 @@ Rectangle {
                     Switch {
                         checked: CameraModel.micEnabled
                         enabled: CameraModel.micAvailable && !CameraModel.recording
+                        Accessible.name: "Microphone"
                         palette.highlight: Theme.accent
                         palette.text: Theme.foreground
                         palette.base: Theme.surfaceAlt
@@ -198,6 +199,7 @@ Rectangle {
 
                     Switch {
                         checked: CameraModel.mirror
+                        Accessible.name: "Mirror preview"
                         palette.highlight: Theme.accent
                         palette.text: Theme.foreground
                         palette.base: Theme.surfaceAlt

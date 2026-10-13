@@ -3,9 +3,12 @@
 #include <QDateTime>
 #include <QFileInfo>
 #include <QGuiApplication>
+#include <QKeyEvent>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickItem>
 #include <QQuickStyle>
+#include <QQuickWindow>
 #include <QTextStream>
 #include <QTimer>
 #include "camera/CameraModel.h"
@@ -234,7 +237,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication::setApplicationName(QStringLiteral("dev.areen.omacam"));
     QGuiApplication::setApplicationDisplayName(QStringLiteral("Omacam"));
-    QGuiApplication::setApplicationVersion(QStringLiteral("0.1.1"));
+    QGuiApplication::setApplicationVersion(QStringLiteral("0.1.2"));
     QGuiApplication::setDesktopFileName(QStringLiteral("dev.areen.omacam"));
 
     QGuiApplication app(argc, argv);
@@ -270,6 +273,9 @@ int main(int argc, char *argv[])
     QCommandLineOption rescanEveryOption(QStringLiteral("rescan-every"),
                                          QStringLiteral("Retry camera recovery every <seconds> while the UI is open."),
                                          QStringLiteral("seconds"));
+    QCommandLineOption tabCheckOption(QStringLiteral("tab-check"),
+                                      QStringLiteral("Send <steps> synthetic Tab presses before the ui-check report."),
+                                      QStringLiteral("steps"));
     parser.addOption(selfTestOption);
     parser.addOption(formatOption);
     parser.addOption(secondsOption);
@@ -279,6 +285,7 @@ int main(int argc, char *argv[])
     parser.addOption(recordDuringTimerOption);
     parser.addOption(uiCheckOption);
     parser.addOption(rescanEveryOption);
+    parser.addOption(tabCheckOption);
     parser.process(app);
 
     CameraModel cameraModel(parser.isSet(selfTestOption));
@@ -319,7 +326,19 @@ int main(int argc, char *argv[])
         return 1;
 
     if (parser.isSet(uiCheckOption)) {
-        QTimer::singleShot(std::max(1, parser.value(uiCheckOption).toInt()) * 1000, &app, [&cameraModel, &engine] {
+        const int tabSteps = parser.isSet(tabCheckOption) ? std::max(0, parser.value(tabCheckOption).toInt()) : 0;
+        QTimer::singleShot(std::max(1, parser.value(uiCheckOption).toInt()) * 1000, &app, [&cameraModel, &engine, tabSteps] {
+            if (tabSteps > 0 && !engine.rootObjects().isEmpty()) {
+                if (auto *window = qobject_cast<QQuickWindow *>(engine.rootObjects().first())) {
+                    window->contentItem()->forceActiveFocus();
+                    for (int step = 0; step < tabSteps; ++step) {
+                        QKeyEvent press(QEvent::KeyPress, Qt::Key_Tab, Qt::NoModifier);
+                        QKeyEvent release(QEvent::KeyRelease, Qt::Key_Tab, Qt::NoModifier);
+                        QGuiApplication::sendEvent(window, &press);
+                        QGuiApplication::sendEvent(window, &release);
+                    }
+                }
+            }
             QTextStream out(stdout);
             const double fps = cameraModel.measuredFps();
             const QVariant settingsVisible = engine.rootObjects().isEmpty()
@@ -329,10 +348,21 @@ int main(int argc, char *argv[])
                 ? nullptr
                 : engine.rootObjects().first()->findChild<QObject *>(QStringLiteral("errorBanner"));
             const bool errorBannerVisible = errorBanner && errorBanner->property("visible").toBool();
+            QObject *focusObject = nullptr;
+            if (!engine.rootObjects().isEmpty()) {
+                if (auto *window = qobject_cast<QQuickWindow *>(engine.rootObjects().first()))
+                    focusObject = window->focusObject();
+            }
+            const QString focusClass = focusObject
+                ? QString::fromLatin1(focusObject->metaObject()->className()).section(QLatin1Char('_'), 0, 0)
+                : QStringLiteral("none");
+            const QString focusText = focusObject ? focusObject->property("text").toString() : QString();
             out << "UICHECK measuredFps=" << fps
                 << " state=" << cameraModel.stateText()
                 << " settingsVisible=" << (settingsVisible.toBool() ? QStringLiteral("true") : QStringLiteral("false"))
                 << " errorBanner=" << (errorBannerVisible ? QStringLiteral("true") : QStringLiteral("false"))
+                << " focus=" << focusClass
+                << " focusText=" << focusText
                 << " format=" << cameraModel.activeFormatLabel() << Qt::endl;
             QGuiApplication::exit(fps > 0.0 ? 0 : 3);
         });

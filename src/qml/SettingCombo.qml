@@ -19,6 +19,7 @@ Column {
         text: root.label
         color: Theme.muted
         font.pixelSize: 12
+        Accessible.ignored: true
     }
 
     ComboBox {
@@ -26,6 +27,7 @@ Column {
         width: root.width
         font.pixelSize: 13
         enabled: root.enabled
+        Accessible.name: root.label
 
         palette.text: Theme.foreground
         palette.buttonText: Theme.foreground

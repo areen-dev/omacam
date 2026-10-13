@@ -1,0 +1,32 @@
+Live acceptance pass (2026-10-13)
+
+A. Controls disabled during recording (KNOWN-ISSUES 7), instrumented build:
+   baseline with settings open (no recording): the tab trace includes
+     Close, combo-Camera, combo-Resolution, combo-Pixel format,
+     combo-Frame rate, combo-Timer, micSwitch, mirrorSwitch, folder fields.
+   recording active (state=Recording): the trace drops combo-Camera,
+     combo-Resolution, combo-Pixel format, combo-Frame rate and micSwitch
+     (disabled); combo-Timer, mirrorSwitch, folder fields, folder buttons
+     and Rescan remain; the Record button reads Stop.
+   The session recording wrote VID_20261013_231406.mp4 to the configured
+   videos folder.
+   Logs: controls-baseline.log, controls-recording.log
+
+B. Terminal start and paths with spaces, installed v0.1.2 binary:
+   launched from the shell; window class=dev.areen.omacam title=Omacam;
+   the Space shortcut captured IMG_20261013_231432.jpg into
+   "/tmp/opencode/acc/space photos".
+   Logs: terminal-spaces.log, terminal-window.txt
+
+C. Corrupt settings, installed v0.1.2 binary:
+   a malformed camera.conf was preserved as camera.conf.corrupt-20261013_231450
+   and the app rewrote defaults and continued (exit 0).
+   Log: corruption.log
+
+D. Newer schema, installed v0.1.2 binary:
+   a schema_version=99 config stayed byte-identical (loaded read-only),
+   exit 0. Log: newer-schema.log
+
+E. Unwritable settings directory, installed v0.1.2 binary:
+   the config directory was read-only; the app ran (exit 0) and the config
+   stayed byte-identical. Log: readonly-config.log

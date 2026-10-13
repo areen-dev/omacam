@@ -328,15 +328,24 @@ int main(int argc, char *argv[])
     if (parser.isSet(uiCheckOption)) {
         const int tabSteps = parser.isSet(tabCheckOption) ? std::max(0, parser.value(tabCheckOption).toInt()) : 0;
         QTimer::singleShot(std::max(1, parser.value(uiCheckOption).toInt()) * 1000, &app, [&cameraModel, &engine, tabSteps] {
+            QString tabTrace;
             if (tabSteps > 0 && !engine.rootObjects().isEmpty()) {
                 if (auto *window = qobject_cast<QQuickWindow *>(engine.rootObjects().first())) {
                     window->contentItem()->forceActiveFocus();
+                    QStringList steps;
                     for (int step = 0; step < tabSteps; ++step) {
                         QKeyEvent press(QEvent::KeyPress, Qt::Key_Tab, Qt::NoModifier);
                         QKeyEvent release(QEvent::KeyRelease, Qt::Key_Tab, Qt::NoModifier);
                         QGuiApplication::sendEvent(window, &press);
                         QGuiApplication::sendEvent(window, &release);
+                        QObject *focused = window->focusObject();
+                        const QString cls = focused
+                            ? QString::fromLatin1(focused->metaObject()->className()).section(QLatin1Char('_'), 0, 0)
+                            : QStringLiteral("none");
+                        steps << QStringLiteral("%1|%2|%3").arg(cls, focused ? focused->objectName() : QString(),
+                                                                 focused ? focused->property("text").toString() : QString());
                     }
+                    tabTrace = steps.join(QLatin1Char(','));
                 }
             }
             QTextStream out(stdout);
@@ -364,6 +373,8 @@ int main(int argc, char *argv[])
                 << " focus=" << focusClass
                 << " focusText=" << focusText
                 << " format=" << cameraModel.activeFormatLabel() << Qt::endl;
+            if (!tabTrace.isEmpty())
+                out << "UICHECK focusSteps=" << tabTrace << Qt::endl;
             QGuiApplication::exit(fps > 0.0 ? 0 : 3);
         });
     }

@@ -1,0 +1,5 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+Theme palette loaded from omarchy-theme-color: dark #090909 #808080
+UICHECK measuredFps=20 state=Streaming settingsVisible=true errorBanner=false focus=AppButton focusText=Open photos folder format=640x480 · MJPEG · 30 fps
+UICHECK focusSteps=AppButton||Mirror,QQuickRectangle|shutter|,AppButton||Record,AppButton||Settings,AppButton||Photos,AppButton||Videos,AppButton||Close,ComboBox|combo-Camera|,ComboBox|combo-Resolution|,ComboBox|combo-Pixel format|,ComboBox|combo-Frame rate|,ComboBox|combo-Timer|,Switch|micSwitch|,Switch|mirrorSwitch|,TextField||/tmp/opencode/acc/a1-photos,AppButton||Open photos folder

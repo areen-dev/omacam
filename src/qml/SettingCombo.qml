@@ -27,6 +27,7 @@ Column {
         width: root.width
         font.pixelSize: 13
         enabled: root.enabled
+        objectName: "combo-" + root.label
         Accessible.name: root.label
 
         palette.text: Theme.foreground

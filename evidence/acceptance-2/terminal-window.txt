@@ -1,0 +1,1 @@
+window class=dev.areen.omacam title=Omacam

@@ -52,9 +52,11 @@ remains open. Evidence: first pass under `evidence/fix/`, second pass under
    `selftest-session-custom.log`).
 7. **Fixed: format, device and microphone controls stayed enabled during
    recording.** The combos and the microphone switch are disabled while
-   recording, and the format setters refuse with a message. Covered by
-   inspection and `qmllint`; a live interaction check was not run because the
-   controls are not keyboard-reachable (item 16).
+   recording, and the format setters refuse with a message. Live-verified:
+   with recording active the disabled controls drop out of the Tab chain
+   while Timer, mirror and the folder fields remain
+   (`evidence/acceptance-2/controls-recording.log`, baseline
+   `controls-baseline.log`).
 8. **Fixed: the device combo desynchronized when a switch was refused.** The
    settings panel re-syncs the combos after a device selection. Covered by
    inspection and `qmllint`.

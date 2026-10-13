@@ -1,0 +1,112 @@
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.1 GPL version 3 or later
+Failed to open VDPAU backend libvdpau_nvidia.so: cannot open shared object file: No such file or directory
+Theme palette loaded from omarchy-theme-color: dark #090909 #808080
+qt.multimedia.ffmpeg.encoder: Recording new media with muxer MP4 (MPEG-4 Part 14) to "/tmp/opencode/acc/a2-videos/VID_20261013_231406.mp4.part" with format: QMediaFormat::MPEG4, QMediaFormat::AudioCodec::AAC, QMediaFormat::VideoCodec::H264
+[libx264 @ 0x7cc40c001b40] using SAR=1/1
+[libx264 @ 0x7cc40c001b40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x7cc40c001b40] profile High 4:4:4 Predictive, level 3.0, 4:4:4, 10-bit
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1438 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1438 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -2880 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1439 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3002 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1439 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3001 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1558 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+UICHECK measuredFps=20 state=Recording settingsVisible=true errorBanner=false focus=QQuickRectangle focusText= format=640x480 · MJPEG · 30 fps
+UICHECK focusSteps=AppButton||Mirror,QQuickRectangle|shutter|,AppButton||Stop,AppButton||Settings,AppButton||Photos,AppButton||Videos,AppButton||Close,ComboBox|combo-Timer|,Switch|mirrorSwitch|,TextField||/tmp/opencode/acc/a2-photos,AppButton||Open photos folder,TextField||/tmp/opencode/acc/a2-videos,AppButton||Open videos folder,AppButton||Rescan cameras,AppButton||Mirror,QQuickRectangle|shutter|
+[aac @ 0x7cc410003880] Qavg: 2396.453
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -2880 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1441 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1440 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -3000 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1561 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -2999 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1561 in stream 1
+[mp4 @ 0x64cf17d60140] Packet with invalid duration -1560 in stream 1
+[libx264 @ 0x7cc40c001b40] frame I:1     Avg QP:32.53  size: 34650
+[libx264 @ 0x7cc40c001b40] frame P:43    Avg QP:32.97  size: 15920
+[libx264 @ 0x7cc40c001b40] frame B:127   Avg QP:36.85  size:  2864
+[libx264 @ 0x7cc40c001b40] consecutive B-frames:  0.6%  1.2%  0.0% 98.2%
+[libx264 @ 0x7cc40c001b40] mb I  I16..4:  0.2% 79.3% 20.4%
+[libx264 @ 0x7cc40c001b40] mb P  I16..4:  0.0%  5.8%  1.1%  P16..4: 38.9% 34.0% 18.6%  0.0%  0.0%    skip: 1.5%
+[libx264 @ 0x7cc40c001b40] mb B  I16..4:  0.0%  0.2%  0.0%  B16..8: 33.1%  6.7%  1.8%  direct: 4.4%  skip:53.8%  L0:35.4% L1:48.5% BI:16.1%
+[libx264 @ 0x7cc40c001b40] 8x8 transform intra:82.8% inter:64.4%
+[libx264 @ 0x7cc40c001b40] coded y,u,v intra: 95.9% 51.1% 28.7% inter: 27.3% 13.3% 3.7%
+[libx264 @ 0x7cc40c001b40] i16 v,h,dc,p: 20% 40%  0% 40%
+[libx264 @ 0x7cc40c001b40] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 10% 13% 12%  6% 14% 10% 15%  8% 12%
+[libx264 @ 0x7cc40c001b40] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11% 17% 11%  6% 14% 11% 16%  7%  7%
+[libx264 @ 0x7cc40c001b40] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x7cc40c001b40] ref P L0: 56.1% 33.6% 10.2%
+[libx264 @ 0x7cc40c001b40] ref B L0: 94.2%  5.1%  0.6%
+[libx264 @ 0x7cc40c001b40] ref B L1: 98.2%  1.8%
+[libx264 @ 0x7cc40c001b40] kb/s:1014.51

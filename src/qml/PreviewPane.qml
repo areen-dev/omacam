@@ -240,6 +240,7 @@ Item {
                 border.color: activeFocus ? Theme.accent : "#000000"
                 opacity: shutterEnabled ? 1.0 : 0.45
                 activeFocusOnTab: true
+                objectName: "shutter"
                 Accessible.role: Accessible.Button
                 Accessible.name: "Take photo"
 

@@ -160,6 +160,23 @@ Items 10, 13 and 16 are closed; item 14 (frame-rate list) remains open and
 needs a product decision. The tab traversal result also unblocks the live
 interaction checks for items 7-9 in a later pass.
 
+## Live acceptance pass (2026-10-13)
+
+| Check | Result |
+| --- | --- |
+| Controls disabled during recording (item 7) | while recording, the device/resolution/pixel-format/frame-rate combos and the microphone switch drop out of the Tab chain; Timer, mirror and the folder fields remain; the session recording is saved (`controls-recording.log`, `controls-baseline.log`) |
+| Terminal start | installed v0.1.2 binary launched from a shell; window `class=dev.areen.omacam`, `title=Omacam` (`terminal-spaces.log`, `terminal-window.txt`) |
+| Paths with spaces | the Space shortcut saved a photo into `space photos` (`terminal-spaces.log`) |
+| Corrupt settings | original preserved as `camera.conf.corrupt-*`, defaults rewritten, exit 0 (`corruption.log`) |
+| Newer schema | config kept byte-identical (read-only), exit 0 (`newer-schema.log`) |
+| Unwritable settings directory | app ran, config kept byte-identical, exit 0 (`readonly-config.log`) |
+
+The recording-control check used the instrumented build with `--tab-check`
+traces; the remaining checks used the installed v0.1.2 binary. Still not run:
+icon rendering, a full `omarchy theme set` switch, multi-monitor placement,
+HiDPI scaling, IME/paste, camera-disconnect during streaming and the "open
+photos/videos folder" behavior on the renamed build.
+
 ## Historical
 
 The M1 risk spike logs (`evidence/m1/run2.log`, `run3.log`, `run1080.log`) were
@@ -209,11 +226,11 @@ failure, in-memory capture success, and H.264 + AAC recording at 640x480 and
 - Live desktop acceptance beyond launcher identity: icon rendering in the
   launcher/menu, a README screenshot (deliberately skipped by the user; no
   media is published with this tree), a full `omarchy theme set` switch while
-  the app is open (file-change reload is reproduced above), "Open
+  the app is open (file-change reload is reproduced above; terminal start and
+  paths with spaces are covered by the live acceptance pass below), "Open
   photos/videos folder" behavior on the renamed build (an earlier run passed
-  it; see the Capture and folder keys row), terminal start, paths containing
-  spaces through the UI, multi-monitor placement, HiDPI scaling, and IME/paste
-  behavior.
-- Camera-disconnect during streaming and the settings-corruption/read-only
-  paths in the running app (unit tests cover the parser and store only; a busy
-  camera is covered above).
+  it; see the Capture and folder keys row), multi-monitor placement, HiDPI
+  scaling, and IME/paste behavior.
+- Camera-disconnect during streaming (the settings-corruption and read-only
+  paths in the running app are covered by the live acceptance pass below; a
+  busy camera is covered above).

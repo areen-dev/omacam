@@ -55,3 +55,5 @@ backend), C++20, CMake + Ninja. Identity: `dev.areen.omacam`, name `Omacam`.
 - Never hand-edit `EVIDENCE.sha256`; always regenerate via the scaffold tool.
 - `target/` (build dir) is excluded from the manifest.
 - Keep `KNOWN-ISSUES.md` current when defects are fixed.
+- Security: never commit credentials; secret scanning and push protection are
+  enabled, and `SECURITY.md` records the threat model and review history.

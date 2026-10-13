@@ -39,7 +39,7 @@ was closed as documented (no code change possible). Evidence: first pass under
    constructed, and the portal warning no longer appears in start logs
    (`evidence/fix/ui-check-busy.log`). Location: `src/main.cpp`.
 
-## Medium
+## Medium (fixed 2026-10-13)
 
 5. **Fixed: no recovery for the same camera after an error.**
    `refreshDevices()` now retries the camera when the device is unchanged and
@@ -71,7 +71,7 @@ was closed as documented (no code change possible). Evidence: first pass under
     format to show. A busy-camera run reports `state=Camera error` with an
     empty `format=` field (`evidence/fix3/ui-check-busy.log`).
 
-## Low
+## Low (fixed or documented 2026-10-13)
 
 11. **Fixed: `QDesktopServices::openUrl()` results are ignored.** A failed
     folder open now emits an error message. Covered by inspection.

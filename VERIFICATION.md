@@ -248,17 +248,13 @@ failure, in-memory capture success, and H.264 + AAC recording at 640x480 and
 
 ## Not run
 
-- Package build, install, upgrade and removal as a pacman package (no PKGBUILD;
-  packaging is deliberately deferred). The local `./install.sh` lifecycle was
-  reproduced; see the table above.
-- Live desktop acceptance beyond launcher identity: icon rendering in the
-  launcher/menu, a README screenshot (deliberately skipped by the user; no
-  media is published with this tree), a full `omarchy theme set` switch while
-  the app is open (file-change reload is reproduced above; terminal start and
-  paths with spaces are covered by the live acceptance pass below), "Open
-  photos/videos folder" behavior on the renamed build (an earlier run passed
-  it; see the Capture and folder keys row), multi-monitor placement, HiDPI
-  scaling, and IME/paste behavior.
-- Camera-disconnect during streaming (the settings-corruption and read-only
-  paths in the running app are covered by the live acceptance pass below; a
-  busy camera is covered above).
+- Demo media: a README screenshot was deliberately skipped for privacy; no
+  media is published with this tree.
+- A real input method (no IME is installed on this machine); clipboard paste
+  is covered by the live acceptance pass (`evidence/acceptance-3/paste.log`).
+- Multi-monitor placement: not applicable on this machine (a single eDP-1
+  monitor); every GUI run here is a HiDPI run at scale 2
+  (`evidence/acceptance-3/display.txt`).
+- Opening the videos folder with V on the renamed build (the photos folder is
+  covered in `evidence/acceptance-3/folder-open.log`; both keys were covered
+  under the old identity).

@@ -1,6 +1,7 @@
 # Omacam
 
 <img alt="Built for Omarchy: App" height="20" src="https://raw.githubusercontent.com/tcballard/omarchy-badges/75975e5b5bf75e7ede3764bcd2950046f7abfe2c/badges/v1/omarchy-app.svg">
+<img alt="ci" height="20" src="https://github.com/areen-dev/omacam/actions/workflows/ci.yml/badge.svg">
 
 A native webcam app for Omarchy: live preview, photo capture and video recording
 with device, resolution, pixel-format and frame-rate settings taken from the
@@ -10,16 +11,14 @@ Status: implemented vertical slice; unit tests, automated camera self-test and
 local install/uninstall reproduced on Omarchy 4.0.4-1 (see
 [verification](VERIFICATION.md)). The app launches through the desktop entry
 with the expected Wayland app_id, and preview frame delivery is checked by the
-automated `--ui-check` mode. All audit items are closed and verified on
-2026-10-13 across three fix passes plus two live acceptance passes;
-[known issues](KNOWN-ISSUES.md) records them with evidence. The launcher
-entry and icon render in the
-Omarchy menu, the palette follows a full `omarchy theme set` switch, and the
-package recipe's pacman install, upgrade and removal lifecycle is verified;
-a README screenshot was deliberately omitted for
-privacy.
-Version 0.1.3 is the current release; the audit record is in
-[known issues](KNOWN-ISSUES.md).
+automated `--ui-check` mode. All audit items are closed and verified across
+three fix passes, three live acceptance passes and a security hardening pass;
+[known issues](KNOWN-ISSUES.md) records them with evidence. The launcher entry
+and icon render in the Omarchy menu, the palette follows a full
+`omarchy theme set` switch, and the package recipe's pacman install, upgrade
+and removal lifecycle is verified; a README screenshot was deliberately
+omitted for privacy. Version 0.1.3 is the current release and hardens media
+writes (see [security](SECURITY.md)).
 Intended Omarchy target: 4 / Hyprland; this is the intended target, not a tested
 compatibility range.
 Tested Omarchy versions: 4.0.4-1 on Hyprland (Wayland), Qt 6.11.2, GCC 16.2.1.
@@ -43,6 +42,8 @@ Renamed from `dev.areen.camera` to `dev.areen.omacam`; existing settings migrate
   changes, falling back to the nearest supported format.
 - Recording writes `*.part` and renames to the final name only after the encoder
   finalizes; a failed recording keeps the partial file.
+- Media writes are atomic and symlink-safe; see [security](SECURITY.md) for the
+  threat model and review history.
 - Settings are written atomically with a schema version; a malformed file is
   preserved as `camera.conf.corrupt-<timestamp>` instead of being overwritten.
 - Read-only Omarchy theme palette consumption via `omarchy-theme-color`, with a
@@ -100,6 +101,11 @@ and icon. Rollback is `--uninstall` plus restoring a previous binary or commit.
 Kept on uninstall: `~/.config/dev.areen.omacam/camera.conf`,
 `~/Pictures/Camera`, `~/Videos/Camera` (or the configured folders).
 
+An Arch package recipe is in `packaging/PKGBUILD` (pinned to the release tag
+archive with a checksum). Its pacman install, upgrade and removal lifecycle is
+reproduced in [verification](VERIFICATION.md); a pull request against the
+Omarchy package repository is open.
+
 ## Limitations
 
 - Photo capture uses the in-memory frame path because `captureToFile` fails on
@@ -112,6 +118,17 @@ Kept on uninstall: `~/.config/dev.areen.omacam/camera.conf`,
   the nearest supported rate, because Qt exposes only frame-rate ranges.
 - Folder paths are edited as text; there is no portal folder picker yet.
 - The Qt Multimedia FFmpeg backend reports GPL licensing; see [credits](CREDITS.md).
+
+## Security
+
+- No network functionality: the app issues no network requests and has no
+  service or privileged component.
+- Media writes are atomic and symlink-safe; settings input is validated and
+  oversized or malformed files fall back to defaults.
+- Release binaries use PIE, full RELRO, BIND_NOW, stack protector and FORTIFY,
+  and the repository runs CodeQL, Dependabot and secret scanning.
+- Report vulnerabilities privately via GitHub; the threat model and review
+  history are in [SECURITY.md](SECURITY.md).
 
 ## Evidence
 

@@ -65,8 +65,8 @@ public:
 
     void start()
     {
-        m_model->setPhotosDir(m_outputDir + QStringLiteral("/photos"));
-        m_model->setVideosDir(m_outputDir + QStringLiteral("/videos"));
+        m_model->setSessionOutputDirs(m_outputDir + QStringLiteral("/photos"),
+                                      m_outputDir + QStringLiteral("/videos"));
 
         m_watchdog.start(60000);
         connect(&m_watchdog, &QTimer::timeout, this, [this] {
@@ -234,7 +234,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication::setApplicationName(QStringLiteral("dev.areen.omacam"));
     QGuiApplication::setApplicationDisplayName(QStringLiteral("Omacam"));
-    QGuiApplication::setApplicationVersion(QStringLiteral("0.1.0"));
+    QGuiApplication::setApplicationVersion(QStringLiteral("0.1.1"));
     QGuiApplication::setDesktopFileName(QStringLiteral("dev.areen.omacam"));
 
     QGuiApplication app(argc, argv);
@@ -267,6 +267,9 @@ int main(int argc, char *argv[])
                                      QStringLiteral("Load the UI, then report measured preview fps after <seconds>."),
                                      QStringLiteral("seconds"),
                                      QStringLiteral("6"));
+    QCommandLineOption rescanEveryOption(QStringLiteral("rescan-every"),
+                                         QStringLiteral("Retry camera recovery every <seconds> while the UI is open."),
+                                         QStringLiteral("seconds"));
     parser.addOption(selfTestOption);
     parser.addOption(formatOption);
     parser.addOption(secondsOption);
@@ -275,9 +278,10 @@ int main(int argc, char *argv[])
     parser.addOption(cycleTimerOption);
     parser.addOption(recordDuringTimerOption);
     parser.addOption(uiCheckOption);
+    parser.addOption(rescanEveryOption);
     parser.process(app);
 
-    CameraModel cameraModel;
+    CameraModel cameraModel(parser.isSet(selfTestOption));
 
     if (parser.isSet(selfTestOption)) {
         const bool quitDuringRecord = parser.isSet(quitDuringRecordOption);
@@ -332,6 +336,16 @@ int main(int argc, char *argv[])
                 << " format=" << cameraModel.activeFormatLabel() << Qt::endl;
             QGuiApplication::exit(fps > 0.0 ? 0 : 3);
         });
+    }
+
+    if (parser.isSet(rescanEveryOption)) {
+        auto *rescanTimer = new QTimer(&app);
+        rescanTimer->setInterval(std::max(1, parser.value(rescanEveryOption).toInt()) * 1000);
+        QObject::connect(rescanTimer, &QTimer::timeout, &app, [&cameraModel] {
+            if (cameraModel.state() == CameraModel::State::Error)
+                cameraModel.refreshDevices();
+        });
+        rescanTimer->start();
     }
 
     return app.exec();

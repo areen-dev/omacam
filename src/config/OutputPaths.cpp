@@ -2,6 +2,7 @@
 
 #include <QDir>
 #include <QFileInfo>
+#include <QRandomGenerator>
 #include <QStandardPaths>
 
 namespace output {
@@ -53,7 +54,19 @@ QString uniqueMediaPath(const QString &dir, const QString &prefix, const QString
         if (!exists(candidate))
             return candidate;
     }
-    return QDir(dir).filePath(buildMediaName(prefix, when, extension, 1000));
+
+    const QString base = buildMediaName(prefix, when, QString(), 1000);
+    const QString ext = normalizedExtension(extension);
+    const QString suffix = ext.isEmpty() ? QString() : QLatin1Char('.') + ext;
+    QString fallback = QDir(dir).filePath(base + suffix);
+    for (int attempt = 0; attempt < 100; ++attempt) {
+        const QString candidate = QDir(dir).filePath(
+            base + QLatin1Char('-') + QString::number(QRandomGenerator::global()->bounded(1000000)) + suffix);
+        if (!exists(candidate))
+            return candidate;
+        fallback = candidate;
+    }
+    return fallback;
 }
 
 QString partPathFor(const QString &finalPath)

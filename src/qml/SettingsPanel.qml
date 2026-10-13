@@ -54,6 +54,7 @@ Rectangle {
         function onDeviceChanged() { panel.syncCombos() }
         function onFormatsChanged() { panel.syncCombos() }
         function onSelectionChanged() { panel.syncCombos() }
+        function onTimerSecondsChanged() { panel.syncCombos() }
     }
 
     ColumnLayout {
@@ -95,16 +96,21 @@ Rectangle {
                     id: deviceCombo
                     Layout.fillWidth: true
                     label: "Camera"
+                    enabled: !CameraModel.recording
                     model: CameraModel.devices
                     textRole: "label"
                     valueRole: "id"
-                    onActivated: CameraModel.selectDevice(currentValue)
+                    onActivated: {
+                        CameraModel.selectDevice(currentValue)
+                        panel.syncCombos()
+                    }
                 }
 
                 SettingCombo {
                     id: resolutionCombo
                     Layout.fillWidth: true
                     label: "Resolution"
+                    enabled: !CameraModel.recording
                     model: CameraModel.resolutions
                     textRole: "label"
                     valueRole: "value"
@@ -115,6 +121,7 @@ Rectangle {
                     id: pixelCombo
                     Layout.fillWidth: true
                     label: "Pixel format"
+                    enabled: !CameraModel.recording
                     model: CameraModel.pixelFormats
                     onActivated: CameraModel.setPixelFormat(currentText)
                 }
@@ -123,6 +130,7 @@ Rectangle {
                     id: frameRateCombo
                     Layout.fillWidth: true
                     label: "Frame rate"
+                    enabled: !CameraModel.recording
                     model: CameraModel.frameRates
                     textRole: "label"
                     valueRole: "value"
@@ -161,7 +169,7 @@ Rectangle {
 
                     Switch {
                         checked: CameraModel.micEnabled
-                        enabled: CameraModel.micAvailable
+                        enabled: CameraModel.micAvailable && !CameraModel.recording
                         palette.highlight: Theme.accent
                         palette.text: Theme.foreground
                         palette.base: Theme.surfaceAlt

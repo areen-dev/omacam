@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(omacam
-    VERSION 0.1.0
+    VERSION 0.1.1
     DESCRIPTION "Omacam camera app for Omarchy"
     LANGUAGES CXX
 )

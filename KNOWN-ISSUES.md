@@ -2,8 +2,10 @@
 
 Status of this list: defects found by a code and live-test audit on 2026-09-21
 and re-checked during the final verification on 2026-10-13. Items 1-4 were
-fixed and re-verified on 2026-10-13; logs are under `evidence/fix/`. Items 5-17
-remain open. Audit evidence is under `evidence/known-issues/`.
+fixed and re-verified in the first fix pass; items 5-9, 11, 12, 15 and 17 were
+fixed in a second pass. Items 10, 13, 14 and 16 remain open. Evidence: first
+pass under `evidence/fix/`, second pass under `evidence/fix2/`, audit files
+under `evidence/known-issues/`.
 
 ## High (fixed 2026-10-13)
 
@@ -37,39 +39,47 @@ remain open. Audit evidence is under `evidence/known-issues/`.
 
 ## Medium
 
-5. **No recovery for the same camera after an error.** "Rescan cameras" only
-   restarts the device when the selection changes, and selecting the same
-   device is a no-op. With one camera, only a restart recovers.
-6. **`--self-test` writes the temporary photo and video folders into the user
-   settings file.** Run it with an isolated `XDG_CONFIG_HOME` or accept that
-   the folders change. Documented behavior is missing.
-7. **Format, device and microphone controls stay enabled during recording.**
-   Changing resolution mid-recording calls `setCameraFormat()`; the microphone
-   switch is silently ignored by the recorder, so the switch can show a state
-   the recording is not using.
-8. **The device combo desynchronizes when a switch is refused** (for example
-   during recording): the combo shows the new device while the model keeps the
-   old one.
-9. **The Timer combo does not follow the T key** while the settings panel is
-   open, because it is not connected to `timerSecondsChanged`.
+5. **Fixed: no recovery for the same camera after an error.**
+   `refreshDevices()` now retries the camera when the device is unchanged and
+   the app is in the error state. A busy-camera run whose holder is released
+   recovers to `state=Streaming` without an app restart
+   (`evidence/fix2/rescan-recovery.log`).
+6. **Fixed: `--self-test` wrote the temporary folders into the user settings
+   file.** Self-test mode no longer writes the settings file at all: a fresh
+   `XDG_CONFIG_HOME` gets no file and an existing config stays byte-identical
+   (`evidence/fix2/settings-session.txt`, `selftest-session-fresh.log`,
+   `selftest-session-custom.log`).
+7. **Fixed: format, device and microphone controls stayed enabled during
+   recording.** The combos and the microphone switch are disabled while
+   recording, and the format setters refuse with a message. Covered by
+   inspection and `qmllint`; a live interaction check was not run because the
+   controls are not keyboard-reachable (item 16).
+8. **Fixed: the device combo desynchronized when a switch was refused.** The
+   settings panel re-syncs the combos after a device selection. Covered by
+   inspection and `qmllint`.
+9. **Fixed: the Timer combo did not follow the T key.** The panel re-syncs on
+   `timerSecondsChanged`. Covered by inspection and `qmllint`.
 10. **Stale format chip.** During an error the status chip still shows the
     last format at 0 fps, and when all cameras disappear the selection strings
     are not cleared.
 
 ## Low
 
-11. `QDesktopServices::openUrl()` results are ignored; a failed folder open
-    gives no feedback.
-12. Microphone availability is sampled once; a microphone connected later is
-    not noticed.
+11. **Fixed: `QDesktopServices::openUrl()` results are ignored.** A failed
+    folder open now emits an error message. Covered by inspection.
+12. **Fixed: microphone availability is sampled once.** `audioInputsChanged`
+    now refreshes the availability flag. Covered by inspection; a live
+    hot-plug check was not run.
 13. The theme helper process has no timeout, and live theme reload is not
     installed when the Omarchy state directory is absent at startup.
 14. The frame-rate list can offer standard rates inside a device range that
     the device does not support discretely.
-15. Output file naming stops checking for collisions after 1000 attempts.
+15. **Fixed: output file naming stops checking after 1000 attempts.** After
+    the sequential attempts a randomized suffix keeps checking; the new unit
+    test `avoidsCollisionCap` covers the fallback (`evidence/fix2/ctest.log`).
 16. Accessibility: the custom buttons and the shutter have no accessible
     names or roles and cannot be reached with Tab; switches have no
     accessible labels.
-17. Documentation: recording time formatting breaks past 99 minutes. The
-    self-test settings side effect and the `--ui-check` exit codes are now
-    documented in `README.md`.
+17. **Fixed: recording time formatting past 99 minutes.** Durations of an hour
+    or more now format as `H:MM:SS`. Covered by inspection; a real hour-long
+    recording was not run.

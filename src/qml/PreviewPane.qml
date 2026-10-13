@@ -9,9 +9,12 @@ Item {
 
     function formatDuration(milliseconds) {
         var total = Math.floor(milliseconds / 1000)
-        var minutes = Math.floor(total / 60)
+        var hours = Math.floor(total / 3600)
+        var minutes = Math.floor((total % 3600) / 60)
         var seconds = total % 60
-        return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds
+        var mm = (minutes < 10 ? "0" : "") + minutes
+        var ss = (seconds < 10 ? "0" : "") + seconds
+        return hours > 0 ? hours + ":" + mm + ":" + ss : mm + ":" + ss
     }
 
     Rectangle {

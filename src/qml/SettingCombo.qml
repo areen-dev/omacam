@@ -25,6 +25,7 @@ Column {
         id: combo
         width: root.width
         font.pixelSize: 13
+        enabled: root.enabled
 
         palette.text: Theme.foreground
         palette.buttonText: Theme.foreground

@@ -13,7 +13,7 @@ jobs:
       - run: pacman-key --populate archlinux
       - run: pacman -Syu --noconfirm
       - run: pacman -S --noconfirm base-devel git cmake ninja qt6-base qt6-declarative qt6-multimedia desktop-file-utils
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
       - run: cmake --build build
       - run: ctest --test-dir build --output-on-failure

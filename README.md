@@ -15,7 +15,7 @@ automated `--ui-check` mode. The high-severity defects from the first audit
 fixed and verified on 2026-10-13. Icon rendering, a full live
 `omarchy theme set` switch and a README screenshot remain pending (the
 screenshot was deliberately omitted for privacy).
-Version 0.1.0 still has open medium- and low-severity items; review
+Version 0.1.1 still has open medium- and low-severity items; review
 [known issues](KNOWN-ISSUES.md) before you publish or deploy this app.
 Intended Omarchy target: 4 / Hyprland; this is the intended target, not a tested
 compatibility range.
@@ -74,11 +74,10 @@ Self-test options: `--format <WxH>`, `--seconds <n>`, `--timer-seconds <3|10>`,
 recording while the self-timer counts down and checks that no photo is saved
 during recording). `--ui-check <seconds>` loads the UI and reports measured
 preview fps, camera state, settings visibility, error-banner visibility and the
-active format. Self-test and ui-check exit 0 on success and 2 on failure;
-`--ui-check` exits 3 when no frames were measured (for example with the camera
-busy). The self-test applies its temporary photo and video folders to the app
-settings, so run it with an isolated `XDG_CONFIG_HOME` to leave your own
-settings unchanged.
+active format; `--rescan-every <seconds>` retries camera recovery while the UI
+is open. Self-test and ui-check exit 0 on success and 2 on failure; `--ui-check`
+exits 3 when no frames were measured (for example with the camera busy). The
+self-test does not write the settings file.
 
 ## Install and rollback
 

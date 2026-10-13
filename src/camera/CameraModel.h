@@ -71,7 +71,7 @@ public:
     };
     Q_ENUM(State)
 
-    explicit CameraModel(QObject *parent = nullptr);
+    explicit CameraModel(bool sessionOnly = false, QObject *parent = nullptr);
     ~CameraModel() override;
 
     QVariantList devices() const { return m_devices; }
@@ -101,6 +101,7 @@ public:
     void setPhotosDir(const QString &dir);
     QString videosDir() const { return m_videosDir; }
     void setVideosDir(const QString &dir);
+    void setSessionOutputDirs(const QString &photosDir, const QString &videosDir);
 
     State state() const { return m_state; }
     QString stateText() const;
@@ -206,6 +207,7 @@ private:
     bool m_micAvailable = false;
     QString m_photosDir;
     QString m_videosDir;
+    bool m_sessionDirs = false;
     State m_state = State::NoCamera;
     QString m_errorText;
     bool m_imageCaptureReady = false;

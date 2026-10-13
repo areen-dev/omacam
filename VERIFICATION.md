@@ -118,8 +118,27 @@ and this run re-verified them on the same machine and camera. Logs:
 | Install and launcher | install exit 0; Hyprland `class=dev.areen.omacam`, `title=Omacam` on the installed binary (`install.log`, `launcher.txt`) |
 | Scaffold contract | `check`, `snapshot` and `verify` pass |
 
-The four high defects are closed; medium and low items 5-17 in
-[KNOWN-ISSUES.md](KNOWN-ISSUES.md) remain open.
+The four high defects were closed; the remaining items are statused in the
+second fix verification run below.
+
+## Second fix verification run (2026-10-13)
+
+Medium/low items 5-9, 11, 12, 15 and 17 were fixed and re-verified in a second
+pass. Logs: `evidence/fix2/`.
+
+| Check | Result |
+| --- | --- |
+| Unit tests | 4/4 pass, including the new collision-fallback test (`ctest.log`) |
+| QML lint | exit 0, unqualified-access warnings only (`qmllint.txt`) |
+| Self-test 1280x720 | exit 0, photo and video saved (`selftest-1280x720.log`) |
+| Self-test settings isolation | fresh config: no settings file created; existing config with custom folders: byte-identical after the run (`settings-session.txt`, `selftest-session-fresh.log`, `selftest-session-custom.log`) |
+| Same-camera recovery | busy camera released while `--rescan-every 3` was active: `state=Streaming`, 20 fps, no restart (`rescan-recovery.log`) |
+| Preview and error banner | exit 0, `state=Streaming`, `errorBanner=false` (`ui-check.log`) |
+
+Items 5-9, 11, 12, 15 and 17 are closed; items 10, 13, 14 and 16 remain open.
+The device-combo resync, timer-combo resync, control disablement and folder
+open failure paths are covered by inspection and lint; live interaction checks
+were not run because the controls are not keyboard-reachable (item 16).
 
 ## Historical
 

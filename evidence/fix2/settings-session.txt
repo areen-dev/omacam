@@ -1,0 +1,13 @@
+Self-test settings isolation (2026-10-13)
+
+Fresh XDG_CONFIG_HOME:
+  command: dev.areen.omacam --self-test <dir> --format 640x480 --seconds 3
+  result: exit 0, result photo=ok video=ok timer=ok cycle=ok
+  settings: no camera.conf created (full log: selftest-session-fresh.log)
+
+Existing config with custom folders:
+  config: photos_dir=/tmp/opencode/fix2/custom-photos,
+          videos_dir=/tmp/opencode/fix2/custom-videos, self_timer_seconds=3
+  command: dev.areen.omacam --self-test <dir> --format 640x480 --seconds 3 --timer-seconds 3
+  result: exit 0, config sha256 before == after (unchanged)
+  (full log: selftest-session-custom.log)

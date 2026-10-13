@@ -14,6 +14,7 @@ class TestOutputPaths : public QObject
 private slots:
     void buildsTimestampedNames();
     void resolvesCollisions();
+    void avoidsCollisionCap();
     void handlesPartSuffixes();
     void ensuresDirectories();
 };
@@ -40,6 +41,18 @@ void TestOutputPaths::resolvesCollisions()
                                                      return taken.contains(candidate);
                                                  });
     QCOMPARE(path, QStringLiteral("/tmp/cam/IMG_20260919_230507_2.jpg"));
+}
+
+void TestOutputPaths::avoidsCollisionCap()
+{
+    const QString path = output::uniqueMediaPath(QStringLiteral("/tmp/cam"), QStringLiteral("IMG"),
+                                                 QStringLiteral("jpg"),
+                                                 QDateTime(QDate(2026, 9, 19), QTime(23, 5, 7)),
+                                                 [](const QString &) {
+                                                     return true;
+                                                 });
+    QVERIFY(path.startsWith(QStringLiteral("/tmp/cam/IMG_20260919_230507_1000-")));
+    QVERIFY(path.endsWith(QStringLiteral(".jpg")));
 }
 
 void TestOutputPaths::handlesPartSuffixes()

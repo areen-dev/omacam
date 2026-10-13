@@ -39,9 +39,10 @@ const char *kVideosDirKey = "videos_dir";
 
 } // namespace
 
-CameraModel::CameraModel(QObject *parent)
+CameraModel::CameraModel(bool sessionOnly, QObject *parent)
     : QObject(parent)
 {
+    m_sessionDirs = sessionOnly;
     m_settings = std::make_unique<SettingsStore>(SettingsStore::defaultFilePath());
     const SettingsStore::LoadStatus status = m_settings->load();
     if (status != SettingsStore::LoadStatus::Loaded && status != SettingsStore::LoadStatus::Defaults)
@@ -187,6 +188,14 @@ CameraModel::CameraModel(QObject *parent)
         refreshDevices();
     });
 
+    connect(&m_mediaDevices, &QMediaDevices::audioInputsChanged, this, [this] {
+        const bool available = !QMediaDevices::defaultAudioInput().isNull();
+        if (m_micAvailable == available)
+            return;
+        m_micAvailable = available;
+        emit micAvailableChanged();
+    });
+
     m_fpsTimer.setInterval(1000);
     connect(&m_fpsTimer, &QTimer::timeout, this, [this] {
         const double fps = static_cast<double>(m_frameCount);
@@ -311,6 +320,19 @@ void CameraModel::setVideosDir(const QString &dir)
     saveSettings();
 }
 
+void CameraModel::setSessionOutputDirs(const QString &photosDir, const QString &videosDir)
+{
+    m_sessionDirs = true;
+    if (m_photosDir != photosDir) {
+        m_photosDir = photosDir;
+        emit photosDirChanged();
+    }
+    if (m_videosDir != videosDir) {
+        m_videosDir = videosDir;
+        emit videosDirChanged();
+    }
+}
+
 void CameraModel::selectDevice(const QString &id)
 {
     if (id == m_deviceId)
@@ -350,16 +372,28 @@ void CameraModel::selectDevice(const QString &id)
 
 void CameraModel::setResolution(const QString &resolution)
 {
+    if (m_state == State::Recording) {
+        emit message(QStringLiteral("Stop recording before changing the format"), true);
+        return;
+    }
     applySelection(parseResolution(resolution), m_pixelFormat, m_frameRate, true);
 }
 
 void CameraModel::setPixelFormat(const QString &pixelFormat)
 {
+    if (m_state == State::Recording) {
+        emit message(QStringLiteral("Stop recording before changing the format"), true);
+        return;
+    }
     applySelection(parseResolution(m_resolution), pixelFormat, m_frameRate, true);
 }
 
 void CameraModel::setFrameRate(double fps)
 {
+    if (m_state == State::Recording) {
+        emit message(QStringLiteral("Stop recording before changing the format"), true);
+        return;
+    }
     applySelection(parseResolution(m_resolution), m_pixelFormat, fps, true);
 }
 
@@ -491,7 +525,8 @@ void CameraModel::openPhotosDir()
         emit message(error, true);
         return;
     }
-    QDesktopServices::openUrl(QUrl::fromLocalFile(m_photosDir));
+    if (!QDesktopServices::openUrl(QUrl::fromLocalFile(m_photosDir)))
+        emit message(QStringLiteral("Could not open the photos folder"), true);
 }
 
 void CameraModel::openVideosDir()
@@ -501,7 +536,8 @@ void CameraModel::openVideosDir()
         emit message(error, true);
         return;
     }
-    QDesktopServices::openUrl(QUrl::fromLocalFile(m_videosDir));
+    if (!QDesktopServices::openUrl(QUrl::fromLocalFile(m_videosDir)))
+        emit message(QStringLiteral("Could not open the videos folder"), true);
 }
 
 void CameraModel::refreshDevices()
@@ -511,6 +547,8 @@ void CameraModel::refreshDevices()
         return;
     }
     rebuildDevices(false);
+    if (m_state == State::Error)
+        retry();
 }
 
 void CameraModel::retry()
@@ -803,6 +841,8 @@ void CameraModel::updateActiveFormatLabel()
 void CameraModel::saveSettings()
 {
     if (!m_settings || m_settings->readOnly())
+        return;
+    if (m_sessionDirs)
         return;
 
     m_settings->setValue(kDeviceKey, m_deviceId);
